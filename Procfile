@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 stepapp/public/
+web: vendor/bin/heroku-php-apache2 public/
