@@ -1,8 +1,42 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
+// ====================================================
+// Foundation
+// ====================================================
+@import "foundation/_reset";
+@import "foundation/_variables";
+@import "foundation/_mixin";
+@import "foundation/_base";
+
+// ====================================================
+// Layout
+// ====================================================
+
+@import "layout/_footer";
+@import "layout/_header";
+@import "layout/_main";
+
+// ====================================================
+// Object
+// ====================================================
+
+
+// ====================================================
+// Component
+// ====================================================
+
+@import "object/component/_form";
+@import "object/component/_button";
+@import "object/component/_pagenation";
+
+// ====================================================
+// Project
+// ====================================================
+
+@import "object/project/_form";
+@import "object/project/_header";
+@import "object/project/_footer";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
