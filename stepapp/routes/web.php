@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/register', function () {
+    return view('auth/register');
+});
+Route::get('/login', function () {
+    return view('auth/login');
+});
+Route::get('/reminder', function () {
+    return view('auth/passwords/email');
+});
+Route::get('/reset', function () {
+    return view('auth/passwords/reset');
+});
+Route::get('/auth_key', function () {
+    return view('auth/passwords/auth_key');
+});
