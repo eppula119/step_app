@@ -34,3 +34,7 @@ Route::get('/reset', function () {
 Route::get('/auth_key', function () {
     return view('auth/passwords/auth_key');
 });
+
+Route::get('/new_step', function () {
+    return view('step/new_step');
+});

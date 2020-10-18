@@ -79,7 +79,7 @@
               <strong></strong>
             </span>
 
-          <p class="c-form__comment">※メールアドレス宛に認証キーが届きます。</p>
+          <p class="c-form__comment">ご登録メールアドレスを送信してください。後ほど再設定のためのリンクを記載したメールを送らせていただきます。</p>
 
 
             <input type="submit" class="c-btn c-btnAuth" value="送信">
