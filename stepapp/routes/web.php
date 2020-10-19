@@ -64,3 +64,7 @@ Route::get('/step_list', function () {
 Route::get('/mypage', function () {
     return view('step/mypage');
 });
+// ＝＝＝＝＝＝＝＝＝＝＝＝　STEP詳細画面表示　＝＝＝＝＝＝＝＝＝＝＝＝
+Route::get('/step_detail', function () {
+    return view('step/step_detail');
+});
