@@ -72,3 +72,8 @@ Route::get('/step_detail', function () {
 Route::get('/child_detail', function () {
     return view('step/child_detail');
 });
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝　TOP画面表示　＝＝＝＝＝＝＝＝＝＝＝＝
+Route::get('/top', function () {
+    return view('step/top');
+});
