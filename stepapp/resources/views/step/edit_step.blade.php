@@ -61,7 +61,7 @@
   </header>
 
   <main class="l-main">
-<!--ーーーーーーーーーーーーーーーーーー STEP投稿画面表示 ーーーーーーーーーーーーーーーーーー--> 
+<!--ーーーーーーーーーーーーーーーーーー STEP編集画面表示 ーーーーーーーーーーーーーーーーーー--> 
     <div class="l-bg p-stepForm"> 
   
       <form class="p-registerStep">
@@ -117,7 +117,11 @@
           <strong>小数点第1位まで入力可能です。</strong>
         </span>
         </div>
-        <button type="submit" class="c-btnEntry c-btn">子STEP登録へ→</button>
+        <button type="submit" class="c-btnEntry c-btn c-btn--white">次の子STEPへ→</button>
+        <div class="p-btnContainer">
+          <button type="submit" class="c-btnEntry c-btn　c-btn--gray">削除</button>
+          <button type="submit" class="c-btnEntry c-btn">更新</button>
+        </div>
       </form>
     </div>
   </main>

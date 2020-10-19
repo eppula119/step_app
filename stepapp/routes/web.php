@@ -38,3 +38,9 @@ Route::get('/auth_key', function () {
 Route::get('/new_step', function () {
     return view('step/new_step');
 });
+Route::get('/edit_step', function () {
+    return view('step/edit_step');
+});
+Route::get('/new_child', function () {
+    return view('step/new_child');
+});
