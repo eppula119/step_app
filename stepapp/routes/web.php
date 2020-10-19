@@ -68,3 +68,7 @@ Route::get('/mypage', function () {
 Route::get('/step_detail', function () {
     return view('step/step_detail');
 });
+// ＝＝＝＝＝＝＝＝＝＝＝＝　子STEP詳細画面表示　＝＝＝＝＝＝＝＝＝＝＝＝
+Route::get('/child_detail', function () {
+    return view('step/child_detail');
+});

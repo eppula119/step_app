@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>STEP詳細</title>
+  <title>子STEP詳細</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -62,31 +62,28 @@
 
   <main class="l-main">
 <!--ーーーーーーーーーーーーーーーーーー STEP詳細画面表示 ーーーーーーーーーーーーーーーーーー--> 
-    <div class="l-bg p-stepForm"> 
-      <div class="p-indexContainer">
-        <span class="p-indexContainer__category c-category">英会話</span>
-        <span class="p-indexContainer__time">目標時間：160時間</span>
-        <span class="p-indexContainer__fav"><i class="fas fa-heart p-fav"></i></span>
-      </div>
-      <p class="p-detailTitle">猿でも分かる英会話！</p>
-<!--ーーーーーーーーーーーーーーーーーー 内容部分 ーーーーーーーーーーーーーーーーーー--> 
-      <div class="p-detailContent">
-        <span class="p-detailContent__text">中学生向けの英会話勉強法です。<br/>学生のうちに身につけておくと<br/>今後何十年と大人になっても使えます。</span>
-    　</div>
-<!-- --------------------------------- 画像部分 -------------------------------- -->
-      <div class="p-detailImage">
-        <img src="./images/rika.png" alt="" class="p-detailImage__img">   
-    　</div>
-<!-- --------------------------------- 子STEP一覧部分 -------------------------------- -->
-@for($i = 0; $i < 3; $i++)
-      <div class="p-childStep">
-        <span class="p-childStep__number">STEP:1</span>
-        <span class="p-childStep__title">兎にも角にもまずはリスニング！</span>
-      </div>
-@endfor
-<!-- ---------------------------------ボタン部分 -------------------------------- -->
-      <button type="submit" class="c-btnEntry c-btn">チャレンジする</button>
-      <button type="submit" class="c-btn p-snsBtn"><i class="fab fa-twitter"></i>Twitterでシェアする</button>
+    <div class="l-bg p-stepForm">
+      <p class="p-stepForm__title">猿でも分かる英会話</p>
+        <div class="p-childContainer">
+          <div class="p-childContainer__index">
+            <span class="p-childTitle">STEP:1</span>
+            <span class="p-childTime">目標時間：30分</span>
+          </div>
+          <p class="p-childContainer__title">兎にも角にもまずはリスニング</p>
+    <!--ーーーーーーーーーーーーーーーーーー 内容部分 ーーーーーーーーーーーーーーーーーー--> 
+          <div class="p-childContainer__content">
+            <span class="p-childContent">中学生向けの英会話勉強法です。<br/>学生のうちに身につけておくと<br/>今後何十年と大人になっても使えます。</span>
+        　</div>
+    <!-- --------------------------------- 画像部分 -------------------------------- -->
+          <div class="p-childContainer__img">
+            <img src="./images/rika.png" alt="" class="p-childImage">   
+        　</div>
+   
+    <!-- ---------------------------------ボタン部分 -------------------------------- -->
+          <button type="submit" class="c-btnEntry c-btn">クリア</button>
+          <button type="submit" class="c-btn p-snsBtn"><i class="fab fa-twitter"></i>Twitterでシェアする</button>
+          <button type="submit" class="c-btn p-nextBtn">→STEP2へ</button>
+        </div>
   　</div>
   </main>
 
