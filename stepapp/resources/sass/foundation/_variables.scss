@@ -1,19 +1,86 @@
-// Body
-$body-bg: #f8fafc;
+/* ---------------------------------
+variables
+--------------------------------- */
 
-// Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
+$site-width: 1024px;
 
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$color_dark100: #272B2D;
+$color_dark075: #8B98A2;
+$color_dark050: #C9D0D6;
+$color_dark025: #E7EAEC;
+
+$color_light100: rgba(255,255,255,1.00);
+$color_light070: rgba(255,255,255,0.70);
+$color_light030: rgba(255,255,255,0.30);
+$color_light012: rgba(255,255,255,0.12);
+
+$color_main: rgba(159,229,237,0.8);
+$color_sub: rgba(98,184,189,1);
+$color_star: #DAA520;
+$color_accent: #FFCCBA;
+$color_base: $color_light100;
+$color_base--sub: #F8FCFF;
+$color_err: #FF0A0A;
+$color_shadow: #666666;
+
+$color_btn--hover: #999999;
+
+$font-color_default: $color_dark100;
+$font-color_inverted: $color_light100;
+$font-color_link: $color_base--sub;
+
+$font-size_default: 1rem;
+$font-size_xs: 1.2rem;
+$font-size_s: 1.4rem;
+$font-size_m: 1.6rem;
+$font-size_l: 1.8rem;
+$font-size_xl: 2rem;
+$font-size_xxl: 2.2rem;
+$font-size_2l: 2.4rem;
+$font-size_3l: 2.8rem;
+$font-size_4l: 3.2rem;
+$font-size_5l: 3.6rem;
+$font-size_6l: 4rem;
+$font-size_7l: 5rem;
+$font-size_8l: 6rem;
+$font-size_9l: 8rem;
+
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_2l: 25px;
+$space_3l: 30px;
+$space_4l: 40px;
+$space_5l: 50px;
+$space_6l: 60px;
+$space_7l: 70px;
+$space_8l: 80px;
+$space_9l: 90px;
+$space_10l: 100px;
+$space_15l: 150px;
+
+$font-family_default: 'Noto Sans JP', sans-serif;
+$font-family_accent: 'Gloria Hallelujah', cursive;
+
+//　高さ
+$height_s: 100px;
+$height_m: 200px;
+$height_l: 300px;
+$height_xl: 400px;
+$height_2l: 500px;
+$height_3l: 600px;
+$height_4l: 700px;
+$height_5l: 800px;
+$height_6l: 900px;
+$height_7l: 1000px;
+
+// レイアウト幅
+$layout-width-inner: 1180px;
+
+//　ブレークポイント
+$breakpoints: (
+  'sp': 'screen and (max-width: 767px)',
+  'tab': 'screen and (max-width: #{$layout-width-inner - 1px})',
+  'pc': 'screen and (min-width: #{$layout-width-inner})',
+) !default;

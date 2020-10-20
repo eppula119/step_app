@@ -21,12 +21,12 @@
 <body>
  <!--ーーーーーーーーーーーーーーーーーーー　サービス名 ーーーーーーーーーーーーーーーーーーーーーー-->
     <section class="l-hero">
-      <img src="./images/logo.png" style="width: 100px;" alt="" class="p-heroImg">
+      <img src="./images/logo.png" alt="" class="p-heroImg">
       <p class="p-heroTitle">あなたに合った学び方が見つかる</p>
     </section>
     <!--ーーーーーーーーーーーーーーーーーーー Service ーーーーーーーーーーーーーーーーーーーーーー-->
     <section class="l-service">
-      <img src="./images/top_pen.png" style="width: 100px;" alt="" class="p-serviceImg1">
+      <img src="./images/top_pen.png" alt="" class="p-serviceImg1">
       <div class="p-serviceWrap1">
         <p class="p-serviceWrap1__heading">STEPは無料</p>
         <span class="p-serviceWrap1__text">
@@ -38,13 +38,13 @@
 
     </section>
     
-    <!--ーーーーーーーーーーーーーーーーーーー グラフ ーーーーーーーーーーーーーーーーーーーーーー-->
+    <!--ーーーーーーーーーーーーーーーーーーー データ ーーーーーーーーーーーーーーーーーーーーーー-->
     <section class="l-data">
     <div class="p-dataWrap">
         <p class="p-dataWrap__text">
           ある統計データでは、中学生の学習上での悩みの<br/>半分以上はh上手な勉強のやり方がわからないと回答。
         </p>
-        <img src="./images/data.png" style="width: 100px;"  alt="" class="p-dataWrap__img">
+        <img src="./images/data.png" alt="" class="p-dataWrap__img">
       </div>
     </section>
   
@@ -56,23 +56,23 @@
           <div class="p-produceCard">
             <p class="p-produceCard__heading">子STEP機能</p>
             <span class="p-produceCard__text">
-              ステップに紐づく子ステップを<br/>１つずつクリアしながら学習を<br/>進めることができます。
+              ステップに紐づく子ステップを１つずつクリアしながら学習を進めることができます。
             </span>
-            <img src="./images/logo.png" style="width: 100px;" alt="" class="p-produceCard__img">
+            <img src="./images/logo.png" alt="" class="p-produceCard__img">
           </div>
           <div class="p-produceCard">
             <p class="p-produceCard__heading">カテゴリーも豊富</p>
             <span class="p-produceCard__text">
-              学校で勉強以外にも健康法や<br/>ダイエット、筋トレ、ギター、<br/>英会話など様々なSTEPの<br/>閲覧が可能です。
+              学校で勉強以外にも健康法やダイエット、筋トレ、ギター、英会話など様々なSTEPの閲覧が可能です。
             </span>
-            <img src="./images/logo.png" style="width: 100px;" alt="" class="p-produceCard__img">
+            <img src="./images/logo.png" alt="" class="p-produceCard__img">
           </div>
           <div class="p-produceCard">
             <p class="p-produceCard__heading">自分のSTEPをシェア</p>
             <span class="p-produceCard__text">
-              あなたが今まで培ってきた、学習法を<br/>同じ悩みを持った人へSTEPを登録し<br/>シェアしよう
+              あなたが今まで培ってきた、学習法を同じ悩みを持った人へSTEPを登録しシェアしよう
             </span>
-            <img src="./images/logo.png" style="width: 100px;" alt="" class="p-produceCard__img">
+            <img src="./images/logo.png" alt="" class="p-produceCard__img">
           </div>
         </div>
       </div>
@@ -80,15 +80,15 @@
 
     <!--ーーーーーーーーーーーーーーーーーーー 「今すぐ始める」ボタン ーーーーーーーーーーーーーーーーーーーーーー-->
     <section class="l-start">
-      <img src="./images/logo.png" style="width: 100px;"  alt="" class="p-startImg">
+      <img src="./images/logo.png" alt="" class="p-startImg">
       <button class="c-btn p-startBtn">今すぐ始める</button>
     </section>
 
   <div class="l-footer">
-      <ul class="p-footerMenu">
-        <li class="p-footerMenu__list">特定商取引法</li>
-        <li class="p-footerMenu__list">プライバシーポリシー</li>
-        <li class="p-footerMenu__list">Step</li>
+      <ul class="l-footerMenu">
+        <li class="l-footerMenu__list">特定商取引法</li>
+        <li class="l-footerMenu__list">プライバシーポリシー</li>
+        <li class="l-footerMenu__list">Step</li>
       </ul>
   </div>
 </div>

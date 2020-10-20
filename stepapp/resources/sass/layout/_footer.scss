@@ -1,0 +1,14 @@
+//=============== フッター ========================
+.l-footer {
+    width: 100%;
+    background: $color_sub;
+    .l-footerMenu {
+      display: flex;
+      justify-content: space-between;
+      width: 50%;
+      margin: 0 auto;
+      padding: $space_4l;
+      box-sizing: border-box;
+      color: $color_light100;
+    }
+}
