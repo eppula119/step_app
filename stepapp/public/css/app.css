@@ -287,6 +287,7 @@ h3 {
 .l-main {
   background-color: #91ced9;
   height: 1500px;
+  height: calc( 1500px + 200px );
 }
 
 .l-hero {
@@ -435,12 +436,14 @@ h3 {
 
 .c-btnEntry {
   float: right;
-  width: 25%;
   padding: 15px;
   margin-bottom: 5px;
-  border-bottom: solid 3px #666666;
+  border-bottom: solid 1px #666666;
   box-sizing: border-box;
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+  background-color: white;
+  margin-top: 60px;
+  width: 100%;
 }
 
 .c-editDelteBtn {
@@ -739,6 +742,99 @@ h3 {
   font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 100px;
+}
+
+.p-stepForm {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 60px;
+  font-size: 1.6rem;
+}
+
+.p-stepForm .p-registerStep {
+  width: 100%;
+}
+
+.p-stepForm .p-registerStep__heading {
+  font-size: 2.4rem;
+  margin-top: 60px;
+}
+
+.p-stepForm .p-registerStep__title {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+}
+
+.p-stepForm .p-registerStep__content {
+  width: 100%;
+  height: 400px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.p-stepForm .p-registerStep .p-fileContainer {
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  background-color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.p-stepForm .p-registerStep .p-fileContainer__airDrop {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  opacity: 0.3;
+  border-radius: 5px;
+  line-height: 200px;
+  overflow: hidden;
+}
+
+.p-stepForm .p-registerStep .p-fileContainer__airDrop .p-dropImg {
+  opacity: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.p-stepForm .p-registerStep .p-fileContainer__airDrop .p-outputImg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.p-stepForm .p-registerStep .p-fileContainer__airDrop .p-outputImg__img {
+  height: 100%;
+}
+
+.p-stepForm .p-registerStep__caegory {
+  width: 30%;
+  height: 50px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+}
+
+.p-stepForm .p-registerStep__time .p-stepTime {
+  display: block;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  height: 50px;
+  width: 30%;
 }
 
 /*!
