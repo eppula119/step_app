@@ -1,0 +1,42 @@
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　認証系　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.p-authForm {
+  width: 50%;
+  margin: 0 auto;
+  background-color: $color_light100;
+  position: relative;
+  top: $space_10l;
+  border-radius: 8px;
+  &__container {
+    width: 50%;
+    margin: 0 auto;
+    padding: $space_10l 0;
+    box-sizing: border-box;
+    .p-authSns {
+      width: 200%;
+      padding-right: "-" + $space_10l;
+      // padding-right: -100px;
+      text-align: center;
+      padding-bottom: $space_6l;
+      box-sizing: border-box;
+      border-bottom: solid 1px $color_dark025;
+      position: relative;
+      left: -50%;
+      margin-bottom: $space_6l;
+      &__Btn {
+        color: white;
+        background-color: #87CEEB;
+        border-radius: 10px;
+        font-size: $font-size_l;
+        width: 50%;
+        padding: $space_xl 0;
+      }
+    }
+    .p-registerLink {
+      display: block;
+      text-align: right;
+      &__link {
+        color: $color_dark100;
+      }
+    }
+  }
+}

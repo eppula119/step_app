@@ -273,6 +273,22 @@ h3 {
   color: white;
 }
 
+.l-header {
+  background-color: white;
+  width: 100%;
+  height: 100px;
+}
+
+.l-form {
+  background-color: #91ced9;
+  height: 1000px;
+}
+
+.l-main {
+  background-color: #91ced9;
+  height: 1500px;
+}
+
 .l-hero {
   width: 100%;
   height: 400px;
@@ -290,7 +306,7 @@ h3 {
 
 .l-data {
   width: 100%;
-  background-color: rgba(159, 229, 237, 0.8);
+  background-color: #91ced9;
 }
 
 .l-produce {
@@ -299,12 +315,309 @@ h3 {
 
 .l-start {
   width: 100%;
-  background-color: rgba(159, 229, 237, 0.8);
+  background-color: #91ced9;
   height: 500px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.c-formTitle {
+  box-sizing: border-box;
+  font-size: 2.2rem;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .c-formTitle {
+    font-size: 1.2rem;
+  }
+}
+
+.c-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.c-form__heading {
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 767px) {
+  .c-form {
+    width: 80%;
+  }
+}
+
+.c-form__input {
+  box-sizing: border-box;
+  margin: 5px 0 20px 0;
+  padding: 10px 0;
+  padding-left: 5px;
+  border: solid 1px #C9D0D6;
+  border-radius: 8px;
+}
+
+.c-form__label {
+  margin-top: 40px;
+}
+
+.c-form__label #c-formCheck {
+  vertical-align: text-top;
+  margin-right: 6px;
+}
+
+.c-form__passlink {
+  text-align: right;
+  color: #272B2D;
+}
+
+.c-form__comment {
+  text-align: right;
+  margin: 10px 15px;
+}
+
+@media screen and (max-width: 767px) {
+  .c-form__comment {
+    text-align: left;
+  }
+}
+
+.c-passLink {
+  font-size: 1.2rem;
+  position: relative;
+  color: #272B2D;
+}
+
+.c-passLink::after {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #272B2D;
+  transition: all 0.3s ease 0s;
+}
+
+.c-passLink:hover:after {
+  width: 100%;
+}
+
+.c-btn {
+  background-color: #91ced9;
+  border: none;
+  border-style: none;
+  border-radius: 10px;
+  border-bottom: solid 1px #666666;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.c-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+
+.c-btnAuth {
+  color: white;
+  box-sizing: border-box;
+  padding: 20px 40px;
+  margin: 10px 0;
+}
+
+.c-btnEntry {
+  float: right;
+  width: 25%;
+  padding: 15px;
+  margin-bottom: 5px;
+  border-bottom: solid 3px #666666;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+}
+
+.c-btnRegister {
+  margin: 5px 0 10px 0;
+  border-radius: 8px;
+  background-color: #62b8bd;
+  padding: 10px 0;
+  letter-spacing: 0.1em;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.c-editDelteBtn {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: 15px 40px;
+  box-sizing: border-box;
+  background-color: white;
+  border: solid 1px #C9D0D6;
+  border-radius: 5px;
+  box-shadow: none;
+  transition: background-color 0.6s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1179px) {
+  .c-editDelteBtn {
+    padding: 10px 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .c-editDelteBtn {
+    padding: 5px 15px;
+    font-size: 1rem;
+    margin-right: 15px;
+    margin-top: 15px;
+  }
+}
+
+.c-editDelteBtn:hover {
+  background-color: #999999;
+}
+
+.c-btnPost {
+  display: block;
+  margin-top: 60px;
+  width: 100%;
+  padding: 15px 20px;
+  color: white;
+  background-color: #62b8bd;
+}
+
+.c-logout {
+  background-color: white;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+
+.p-authForm {
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  position: relative;
+  top: 100px;
+  border-radius: 8px;
+}
+
+.p-authForm__container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 100px 0;
+  box-sizing: border-box;
+}
+
+.p-authForm__container .p-authSns {
+  width: 200%;
+  padding-right: "-100px";
+  text-align: center;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  border-bottom: solid 1px #E7EAEC;
+  position: relative;
+  left: -50%;
+  margin-bottom: 60px;
+}
+
+.p-authForm__container .p-authSns__Btn {
+  color: white;
+  background-color: #87CEEB;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  width: 50%;
+  padding: 20px 0;
+}
+
+.p-authForm__container .p-registerLink {
+  display: block;
+  text-align: right;
+}
+
+.p-authForm__container .p-registerLink__link {
+  color: #272B2D;
+}
+
+.p-header {
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.p-header__logo {
+  width: 10%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-header__logo .p-topLink__img {
+  width: 70%;
+  margin-left: 30px;
+}
+
+.p-header__search {
+  width: 30%;
+  height: 35%;
+}
+
+.p-header__search .p-search {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.p-header__search .p-search__form {
+  width: 80%;
+  height: 100%;
+  border: solid 1px #C9D0D6;
+  border-radius: 8px;
+  box-sizing: border-box;
+  float: left;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+}
+
+.p-header__search .p-search__btn {
+  display: block;
+  width: 15%;
+  height: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.p-header__menu {
+  margin-right: 30px;
+}
+
+.p-header__menu .p-menuBtn {
+  border: solid 1px #C9D0D6;
+  background-color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.p-header__menu .p-headerMenu {
+  display: none;
+}
+
+.p-header .p-headerMenuTrigger {
+  display: none;
 }
 
 .p-heroImg {
@@ -389,7 +702,7 @@ h3 {
 }
 
 .p-produceContainer__wrap .p-produceCard {
-  background-color: rgba(159, 229, 237, 0.8);
+  background-color: #91ced9;
   width: 30%;
   border-radius: 10px;
 }

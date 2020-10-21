@@ -1,0 +1,85 @@
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　ヘッダー部分　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.p-header {
+  display: flex;
+  height: $height_s;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  &__logo {
+    width: 10%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .p-topLink {
+      
+      &__img {
+        width: 70%;
+        margin-left: $space_3l;
+      }
+    }
+  }
+  &__search {
+    width: 30%;
+    height: 35%;
+    .p-search {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      &__form {
+        width: 80%;
+        height: 100%;
+        border: solid 1px $color_dark050;
+        border-radius: 8px;
+        box-sizing: border-box;
+        float: left;
+        margin-right: $space_m;
+        padding: $space_m;
+        font-size: $font-size_s;
+        letter-spacing: 2px;
+
+      }
+      &__btn {
+        display: block;
+        width: 15%;
+        height: 100%;
+        border: none;
+        border-radius: 3px;
+
+      }
+    }
+  }
+  &__menu {
+    margin-right: $space_3l;
+    .p-menuBtn {
+      border: solid 1px $color_dark050;
+      background-color: $color_light100;
+      width: 100px;
+      height: 30px;
+      border-radius: 8px;
+    }
+    .p-headerMenu {
+      display: none;
+      &__list {
+
+        .p-menuItem {
+
+          form {
+            .p-logout {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .p-headerMenuTrigger {
+    display: none;
+    &__border {
+
+    }
+  }
+}

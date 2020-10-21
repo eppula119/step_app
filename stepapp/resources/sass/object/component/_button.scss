@@ -1,0 +1,83 @@
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　登録ボタン（認証系）　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.c-btn {
+  background-color: $color_main;
+  border: none;
+  border-style: none;
+  border-radius: 10px;
+  border-bottom: solid 1px $color_shadow;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+.c-btn:active {
+  -webkit-transform: translateY(1px);
+  transform: translateY(1px);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+}
+.c-btnAuth {
+  color: $color_light100;
+  box-sizing: border-box;
+  padding: $space_xl $space_4l;
+  margin: $space_m 0;
+}
+.c-btnEntry {
+  float: right;
+  width: 25%;
+  padding: $space_l;
+  margin-bottom: $space_s;
+  border-bottom: solid 3px $color_shadow;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+}
+.c-btnRegister {
+  margin: $space_s 0 $space_m 0;
+  border-radius: 8px;
+  background-color: $color_sub;
+  padding: $space_m 0;
+  letter-spacing: 0.1em;
+  color: $color_light100;
+  font-size: $font-size_s;
+}
+
+.c-editDelteBtn {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  padding: $space_l $space_4l;
+  box-sizing: border-box;
+  background-color: $color_light100;
+  border: solid 1px $color_dark050;
+  border-radius: 5px;;
+  box-shadow: none;
+  transition: background-color 0.6s;
+  @include mq('tab') {
+    padding: $space_m $space_3l;       
+  }
+  @include mq() {
+    padding: $space_s $space_l;
+    font-size: $font-size_default;
+    margin-right: $space_l;
+    margin-top: $space_l;
+  }
+  cursor: pointer;
+  &:hover {
+    background-color: $color_btn--hover;
+  }
+}
+.c-btnPost {
+  display: block;
+  margin-top: $space_6l;
+  width: 100%;
+  padding: $space_l $space_xl;
+  color: $color_light100;
+  background-color: $color_sub;
+}
+
+.c-logout {
+  background-color: $color_light100;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
