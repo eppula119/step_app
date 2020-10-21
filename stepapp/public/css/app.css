@@ -820,7 +820,7 @@ h3 {
   height: 100%;
 }
 
-.p-stepForm .p-registerStep__caegory {
+.p-stepForm .p-registerStep__category {
   width: 30%;
   height: 50px;
   padding: 5px 10px;
@@ -835,6 +835,24 @@ h3 {
   padding: 5px 10px;
   height: 50px;
   width: 30%;
+}
+
+.p-btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-btnContainer__delete,
+.p-btnContainer__update {
+  width: 40%;
+  border-radius: 6px;
+}
+
+.p-btnContainer__delete {
+  background-color: #8B98A2;
+  color: white;
 }
 
 /*!

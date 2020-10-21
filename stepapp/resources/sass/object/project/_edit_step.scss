@@ -1,0 +1,15 @@
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　STEP編集画面ボタン部分　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.p-btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__delete, &__update {
+    width: 40%;
+    border-radius: 6px;
+  }
+  &__delete {
+    background-color: $color_dark075;
+    color: $color_light100;
+  }
+}
