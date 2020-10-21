@@ -20,19 +20,19 @@
 
 <body>
 <div id="app">
-  <header class="l-header"> 
+ <header class="l-header"> 
 
     <div class="p-header">
         <div class="p-header__logo">
           <a href class="p-topLink">
-            <img src="./images/logo.png" style="width: 100px; height: 100px;" alt class="p-topLink__img" />
+            <img src="./images/logo.png" alt class="p-topLink__img" />
           </a>
         </div>
         <div class="p-header__search">
           <form action="" class="p-search">
             @csrf
             <input type="text" class="p-search__form">
-            <button  type="submit" class="p-search__form">検索</button>
+            <button  type="submit" class="p-search__btn">検索</button>
           </form>
         </div>
         <div class="p-header__menu">
@@ -60,7 +60,7 @@
 
   </header>
 
-  <main class="l-main">
+  <main class="l-form">
 
     <div class="l-bg p-authForm"> 
       <div class="p-authForm__container">
@@ -80,7 +80,7 @@
           />
 
           <span class="c-invalid" role="alert">
-            <strong></strong>
+            <strong>※パスワードが違います</strong>
           </span>
 
           <span class="c-form__heading">パスワード</span>
@@ -94,7 +94,7 @@
           />
 
           <span class="c-invalid" role="alert">
-            <strong></strong>
+            <strong>※パスワードが違います</strong>
           </span>
 
           <span class="c-form__heading">パスワード再入力</span>
@@ -107,20 +107,20 @@
             placeholder="※7文字以上半角英数字"
           />
           <span class="c-invalid" role="alert">
-            <strong></strong>
+            <strong>※パスワードが違います</strong>
           </span>
 
-          <input type="submit" class="c-btnRegister c-btn" value="ユーザー登録" />
+          <input type="submit" class="c-btnAuth c-btn" value="ユーザー登録" />
         </form>
       </div>
     </div>
   </main>
 
   <div class="l-footer">
-      <ul class="p-footerMenu">
-        <li class="p-footerMenu__list">特定商取引法</li>
-        <li class="p-footerMenu__list">プライバシーポリシー</li>
-        <li class="p-footerMenu__list">Step</li>
+      <ul class="l-footerMenu">
+        <li class="l-footerMenu__list">特定商取引法</li>
+        <li class="l-footerMenu__list">プライバシーポリシー</li>
+        <li class="l-footerMenu__list">Step</li>
       </ul>
   </div>
 </div>

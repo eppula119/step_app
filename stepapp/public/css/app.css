@@ -354,11 +354,15 @@ h3 {
 
 .c-form__input {
   box-sizing: border-box;
-  margin: 5px 0 20px 0;
+  margin: 5px 0;
   padding: 10px 0;
   padding-left: 5px;
   border: solid 1px #C9D0D6;
   border-radius: 8px;
+}
+
+.c-form .c-invalid {
+  margin-bottom: 20px;
 }
 
 .c-form__label {
@@ -376,8 +380,7 @@ h3 {
 }
 
 .c-form__comment {
-  text-align: right;
-  margin: 10px 15px;
+  margin: 10px 0 20px 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -411,7 +414,7 @@ h3 {
   background-color: #91ced9;
   border: none;
   border-style: none;
-  border-radius: 10px;
+  border-radius: 30px;
   border-bottom: solid 1px #666666;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.8);
   cursor: pointer;
@@ -438,16 +441,6 @@ h3 {
   border-bottom: solid 3px #666666;
   box-sizing: border-box;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
-}
-
-.c-btnRegister {
-  margin: 5px 0 10px 0;
-  border-radius: 8px;
-  background-color: #62b8bd;
-  padding: 10px 0;
-  letter-spacing: 0.1em;
-  color: white;
-  font-size: 1.4rem;
 }
 
 .c-editDelteBtn {

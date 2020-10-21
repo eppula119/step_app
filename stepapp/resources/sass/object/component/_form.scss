@@ -21,11 +21,14 @@
   }
   &__input {
     box-sizing: border-box;
-    margin: $space_s 0 $space_xl 0;
+    margin: $space_s 0;
     padding: $space_m 0;
     padding-left: $space_s;
     border: solid 1px $color_dark050;
     border-radius: 8px;
+  }
+  .c-invalid {
+    margin-bottom: $space_xl;
   }
   &__label {
     
@@ -40,8 +43,7 @@
     color: $color_dark100;
   }
   &__comment {
-    text-align: right;
-    margin: $space_m $space_l;
+    margin: $space_m 0 $space_xl 0;
     @include mq() {
       text-align: left;
     }
