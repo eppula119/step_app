@@ -1,0 +1,83 @@
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　STEP編集画面ボタン部分　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.p-registerProfile {
+  margin-top: $space_5l;
+  display:block;
+  width: 100%;
+  .p-fileContainer {
+    height: calc( #{$space_10l} * 2 );
+    margin: 0 auto;
+    margin-bottom: $space_4l;
+    &__airDrop {
+      display: block;
+      background-color: $color_dark050;
+      margin: 0 auto;
+      width: 30%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      border: solid 1px $color_dark050;
+      border-radius: 100px;
+      line-height: 200px;
+      background-color: $color_light100;
+      .p-userIcon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 50%;
+        opacity: 0.1;
+        font-size: $font-size_9l;
+      }
+      .p-dropImg {
+        opacity: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .p-outputImg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &__img {
+          height: 100%;
+        }
+      }
+    }
+    &__msg {
+
+    }
+  }
+  &__heading {
+    font-size: $font-size_xxl;
+    display: block;
+    margin-top: $space_3l;
+  }
+  &__content {
+    width: 100%;
+    height: $height_m;
+    letter-spacing: 2px;
+    line-height: 24px;
+    border: none;
+    border-radius: 6px;
+    padding: $space_m $space_xl;
+    box-sizing: border-box;
+  }
+  .p-contentMsg {
+
+  }
+  .p-editEmail {
+    width: 100%;
+    padding: $space_m $space_xl;
+    letter-spacing: 1px;
+    .p-emailMsg {
+
+    }
+  }
+}

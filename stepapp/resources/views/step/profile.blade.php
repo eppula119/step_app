@@ -20,19 +20,19 @@
 
 <body>
 <div id="app">
-  <header class="l-header"> 
+   <header class="l-header"> 
 
     <div class="p-header">
         <div class="p-header__logo">
           <a href class="p-topLink">
-            <img src="./images/logo.png" style="width: 100px; height: 100px;" alt class="p-topLink__img" />
+            <img src="./images/logo.png" alt class="p-topLink__img" />
           </a>
         </div>
         <div class="p-header__search">
           <form action="" class="p-search">
             @csrf
             <input type="text" class="p-search__form">
-            <button  type="submit" class="p-search__form">検索</button>
+            <button  type="submit" class="p-search__btn">検索</button>
           </form>
         </div>
         <div class="p-header__menu">
@@ -60,13 +60,12 @@
 
   </header>
 
-  <main class="l-main">
+  <main class="l-form">
 <!--ーーーーーーーーーーーーーーーーーー プロフィール画面表示 ーーーーーーーーーーーーーーーーーー--> 
     <div class="l-bg p-stepForm"> 
-      <p class="stepForm__title">プロフィール</p>
+      <p class="p-stepForm__title">プロフィール</p>
       <form class="p-registerProfile">
       @csrf
-
         <div class="p-fileContainer">
           <label class="p-fileContainer__airDrop"><i class="fas fa-user p-userIcon"></i>ドラッグ＆ドロップ
             <input type="file" class="p-dropImg" name="image"/>
@@ -90,7 +89,7 @@
         
 
         <span class="p-registerProfile__heading">メールアドレス</span>
-          <input type="email" name="email" class="c-form__input is-invalid p-editEmail" value="" required autocomplete="email" autofocus placeholder="例：hogehoge@gmail.com">
+        <input type="email" name="email" class="c-form__input is-invalid p-editEmail" value="" required autocomplete="email" autofocus placeholder="例：hogehoge@gmail.com">
 
             <span class="c-invalid p-emailMsg" role="alert">
               <strong>メールアドレスの形式になっていません</strong>
@@ -103,10 +102,10 @@
 
 
   <div class="l-footer">
-      <ul class="p-footerMenu">
-        <li class="p-footerMenu__list">特定商取引法</li>
-        <li class="p-footerMenu__list">プライバシーポリシー</li>
-        <li class="p-footerMenu__list">Step</li>
+      <ul class="l-footerMenu">
+        <li class="l-footerMenu__list">特定商取引法</li>
+        <li class="l-footerMenu__list">プライバシーポリシー</li>
+        <li class="l-footerMenu__list">Step</li>
       </ul>
   </div>
 </div>
