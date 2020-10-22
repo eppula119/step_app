@@ -783,7 +783,6 @@ h3 {
   width: 100%;
   height: 200px;
   margin: 0 auto;
-  background-color: white;
   border: none;
   border-radius: 6px;
 }
@@ -853,6 +852,97 @@ h3 {
 .p-btnContainer__delete {
   background-color: #8B98A2;
   color: white;
+}
+
+.p-stepForm__title {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.p-childForm {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 40px;
+}
+
+.p-childForm__heading {
+  font-size: 2.4rem;
+  margin-top: 60px;
+}
+
+.p-childForm__title {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  background-color: rgba(193, 218, 219, 0.3);
+}
+
+.p-childForm__content {
+  width: 100%;
+  height: 400px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: rgba(193, 218, 219, 0.3);
+}
+
+.p-childForm .p-fileContainer {
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  background-color: rgba(193, 218, 219, 0.3);
+  border: none;
+  border-radius: 6px;
+}
+
+.p-childForm .p-fileContainer__airDrop {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  opacity: 0.3;
+  border-radius: 5px;
+  line-height: 200px;
+  overflow: hidden;
+}
+
+.p-childForm .p-fileContainer__airDrop .p-dropImg {
+  opacity: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.p-childForm .p-fileContainer__airDrop .p-outputoImg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.p-childForm .p-fileContainer__airDrop .p-outputoImg__img {
+  height: 100%;
+}
+
+.p-childForm__time .p-stepTime {
+  display: block;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  height: 50px;
+  width: 30%;
+  background-color: rgba(193, 218, 219, 0.3);
 }
 
 /*!

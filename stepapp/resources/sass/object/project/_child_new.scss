@@ -1,0 +1,98 @@
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　子STEP登録部分　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.p-stepForm__title {
+  font-size: $font-size_6l;
+  text-align: center;
+  margin-top: $space_xl;
+  margin-bottom: $space_6l;
+}
+.p-childForm {
+  width: 100%;
+  background-color: $color_light100;
+  border-radius: 10px;
+  padding: $space_xl $space_4l;
+  &__heading {
+    font-size: $font-size_2l;
+    margin-top: $space_6l;
+  }
+  &__title {
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    padding: $space_m $space_xl;
+    letter-spacing: 2px;
+    background-color: $color_form;
+  }
+  .p-titleMsg {
+
+  }
+  &__content {
+    width: 100%;
+    height: $height_xl;
+    line-height: 20px;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 6px;
+    padding: $space_m $space_xl;
+    box-sizing: border-box;
+    background-color: $color_form;
+  }
+  .p-contentMsg {
+
+  }
+  .p-fileContainer {
+    width: 100%;
+    height: $height_m;
+    margin: 0 auto;
+    background-color: $color_form;
+    border: none;
+    border-radius: 6px;
+    &__airDrop {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      text-align: center;
+      opacity: 0.3;
+      border-radius: 5px;
+      line-height: 200px;
+      overflow: hidden;
+      .p-dropImg {
+        opacity: 0;
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+      }
+      .p-outputoImg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        &__img {
+          height: 100%;
+        }
+      }
+    }
+    &__msg {
+
+    }
+  }
+  &__time {
+
+    .p-stepTime {
+      display: block;
+      border: none;
+      border-radius: 6px;
+      padding: $space_s $space_m;
+      height: $height_ss;
+      width: 30%;
+      background-color: $color_form;
+    }
+    .p-timeMsg {
+
+    }
+  }
+
+
+}
