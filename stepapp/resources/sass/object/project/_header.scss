@@ -60,15 +60,27 @@
     }
     .p-headerMenu {
       display: none;
+      position: absolute;
+      background: $color_light100;
+      font-size: $font-size_s;
+      padding: $space_m;
+      box-sizing: border-box;
+      border-radius: 8px;
+      z-index: 1;
       &__list {
 
         .p-menuItem {
-
+          margin-bottom: $space_m;
           form {
             .p-logout {
-
+              background-color: $color_light100;
+              border: none;
+              box-shadow: none;
             }
           }
+        }
+        .p-menuItem:last-child {
+          margin-bottom: 0;
         }
       }
     }

@@ -1,0 +1,18 @@
+  // ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　ページネーション部分　＝＝＝＝＝＝＝＝＝＝＝
+  .c-pagenation {
+    display: flex;
+    justify-content: center;
+    &__item {
+      padding: 0 $space_m;
+      margin: 0 $space_m;
+      box-sizing: border-box;
+      font-size: $font-size_s;
+      border: solid 1px $color_dark025;
+      .c-pageLink {
+        color: $color_dark075;
+      }
+      @include mq(){
+        margin: 0 $space_s;
+      }
+    }
+  }

@@ -1,0 +1,204 @@
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　絞り込み部分　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.p-headerList {
+  height: calc( #{$height_s} + #{$height_ss} );
+  .p-sort {
+    margin-top: -$space_l;
+    padding: 0 $space_3l;
+    box-sizing: border-box;
+    .p-categorySearch {
+      display: inline-block;
+      margin-top: $space_xl;
+      font-size: $font-size_s;
+      margin-right: $space_xl;
+      height: 30px;
+      &__icon {
+        margin-right: $space_s;
+      }
+    }
+    .p-category {
+      display: none;
+      position: absolute;
+      top: $space_10l;
+      left: $space_5l;
+      width: 15%;
+      background: $color_light100;
+      border-radius: 5px;
+      padding: $space_m;
+      box-sizing: border-box;
+      z-index: 1;
+      &__items {
+
+      .p-categoryItem {
+        margin-bottom: $space_m;
+        font-size: $font-size_s;
+        &__link {
+          color: $color_dark100;
+        }
+      }
+      .p-categoryItem:last-child {
+        margin-bottom: 0;
+      }
+    }
+    }
+    .p-favSort {
+      display: inline-block;
+      font-size: $font-size_s;
+      .p-sortForm {
+
+        &__select {
+          box-sizing: border-box;
+          font-size: $font-size_xs;
+          height: 30px;
+          padding: 0 $space_m;
+          border-radius: 6px;
+          border: solid 1px $color_dark025;
+          .p-selectItem {
+
+          }
+        }
+        .p-searchBtn {
+          font-size: $font-size_xs;
+          height: 30px;
+          background-color: $color_light100;
+          border: solid 1px $color_dark025;
+          border-radius: 6px;
+        }
+      }
+    }
+    
+  }
+  .p-sort:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    display: inline-block;
+    width: calc(100% - 60px);
+    height: 1px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: $color_dark025;
+ }
+}
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝　STEP一覧部分　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+.p-stepList {
+  width: 100%;
+  &__container {
+    position: relative;
+    top: calc( #{$height_s} + #{$height_ss} );
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    .p-step {
+      background: $color_light100;
+      width: 27%;
+      height:  calc( #{$height_l} + #{$height_ss} );
+      margin-bottom: $space_3l;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: $space_10l;
+      &__img {
+        width: 100%;
+        height: 60%;
+        border-radius: 3px 3px 0 0;
+      }
+      .p-itemCover {
+        height: 60%;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, .6);
+        border-radius: 3px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all .7s;
+        -webkit-transition: all .7s;
+        color: $color_light100;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: all .7s;
+        &__outline {
+          padding: 0 15px;
+        }
+        &__link {
+          color: $color_light100;
+          .p-coverIcon {
+            font-size: $font-size_m;
+            vertical-align: middle;
+          }
+        }
+      }
+      .p-itemCover:hover {
+        opacity: 1;
+        transform: all .7s;
+      }
+      &__wrap {
+        width: 80%;
+        margin: 0 auto;
+        border: none;
+        height: 40%;
+        border-radius: 0 0 3px 3px;
+        overflow: hidden;
+        .p-faceicon {
+          height: 50%;
+          float: left;
+          margin-top: $space_xl;
+          margin-right: $space_l;
+          display: inline-block;
+          width: 15%;
+          &__img {
+            width: 100%;
+          }
+        }
+          .p-stepTitle {
+            position: relative;
+            top: $space_xl;
+            display: block;
+            height: 50%;
+            font-size: $font-size_m;
+
+          }
+          .p-indexContainer{
+            margin-top: $space_xl;
+            display: flex;
+            justify-content: space-between;
+            &__category {
+              width: 40%;
+              background-color: $color_main;
+              display: inline-block;
+              text-align: center;
+              padding: $space_s $space_m;
+              border-radius: 8px;
+              color: $color_light100;
+            }
+            .p-favContainer {
+
+              &__icon {
+                font-size: $font-size_m;
+              }
+              &__total {
+                font-size: $font-size_m;
+              }
+            }
+          }
+        
+      }
+    }
+  }
+  .p-stepListPage {
+    margin-top: calc( #{ $space_10l } * 2 );
+    &__item {
+      border: none;
+      background-color: $color_light100;
+      border-radius: 3px;
+    }
+  }
+}
