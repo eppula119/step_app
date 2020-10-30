@@ -520,6 +520,117 @@ h3 {
   }
 }
 
+.c-step {
+  background: white;
+  width: 27%;
+  height: calc( 300px + 50px );
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.c-step__img {
+  width: 100%;
+  height: 60%;
+  border-radius: 3px 3px 0 0;
+}
+
+.c-step .c-itemCover {
+  height: 60%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: all 0.7s;
+}
+
+.c-step .c-itemCover__outline {
+  padding: 0 15px;
+}
+
+.c-step .c-itemCover__link {
+  color: white;
+}
+
+.c-step .c-itemCover__link .p-coverIcon {
+  font-size: 1.6rem;
+  vertical-align: middle;
+}
+
+.c-step .c-itemCover:hover {
+  opacity: 1;
+  transform: all 0.7s;
+  width: 100%;
+}
+
+.c-step__wrap {
+  width: 80%;
+  margin: 0 auto;
+  border: none;
+  height: 40%;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+}
+
+.c-step__wrap .c-faceicon {
+  height: 50%;
+  float: left;
+  margin-top: 20px;
+  margin-right: 15px;
+  display: inline-block;
+  width: 15%;
+}
+
+.c-step__wrap .c-faceicon__img {
+  width: 100%;
+}
+
+.c-step__wrap .c-stepTitle {
+  position: relative;
+  top: 20px;
+  display: block;
+  height: 50%;
+  font-size: 1.6rem;
+}
+
+.c-step__wrap .c-indexContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-step__wrap .c-indexContainer__category {
+  width: 40%;
+  background-color: #91ced9;
+  display: inline-block;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: white;
+}
+
+.c-step__wrap .c-indexContainer .c-favContainer__icon {
+  font-size: 1.6rem;
+}
+
+.c-step__wrap .c-indexContainer .c-favContainer__total {
+  font-size: 1.6rem;
+}
+
 .p-authForm {
   width: 50%;
   margin: 0 auto;
@@ -1286,6 +1397,120 @@ h3 {
   border: none;
   background-color: white;
   border-radius: 3px;
+}
+
+.p-mypage {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 60px;
+  font-size: 1.6rem;
+}
+
+.p-mypage__title {
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.p-mypage .p-myStepWrap,
+.p-mypage .p-challengeStepWrap {
+  position: relative;
+  background: white;
+  border-radius: 6px;
+}
+
+.p-mypage .p-myStepWrap__arrowLeft,
+.p-mypage .p-challengeStepWrap__arrowLeft {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  font-size: 4rem;
+}
+
+.p-mypage .p-myStepWrap__arrowRight,
+.p-mypage .p-challengeStepWrap__arrowRight {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  font-size: 4rem;
+}
+
+.p-mypage .p-myStepWrap__title,
+.p-mypage .p-challengeStepWrap__title {
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: solid 1px #C9D0D6;
+  padding-top: 60px;
+  padding-bottom: 3px;
+  margin-bottom: 40px;
+}
+
+.p-mypage .p-myStepWrap .p-stepContainer,
+.p-mypage .p-challengeStepWrap .p-stepContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.p-mypage .p-challengeStepWrap {
+  margin-top: 150px;
+}
+
+.p-step__wrap {
+  width: 100%;
+  border: solid 1px #E7EAEC;
+  border-top: none;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.p-step__wrap--big {
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.p-gaugeContainer {
+  display: block;
+  margin-top: 20px;
+}
+
+.p-gaugeContainer .p-gauge {
+  width: 100%;
+  height: 20px;
+  border: solid 1px #C9D0D6;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+}
+
+.p-gaugeContainer .p-gauge__label {
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  display: block;
+  font-size: 1rem;
+  z-index: 1;
+}
+
+.p-gaugeContainer .p-gauge__fill {
+  width: 100%;
+  height: 100%;
+  background: #91ced9;
+  -webkit-clip-path: inset(0 calc(100% - var(--percent, 100%)) 0 0);
+          clip-path: inset(0 calc(100% - var(--percent, 100%)) 0 0);
+  display: block;
+  border-radius: 10px;
+  border: solid 10px #91ced9;
+}
+
+.p-gaugeContainer .p-gauge__fill--label {
+  color: white;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0px;
 }
 
 /*!
