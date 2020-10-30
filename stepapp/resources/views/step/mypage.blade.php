@@ -25,14 +25,14 @@
     <div class="p-header">
         <div class="p-header__logo">
           <a href class="p-topLink">
-            <img src="./images/logo.png" style="width: 100px; height: 100px;" alt class="p-topLink__img" />
+            <img src="./images/logo.png" alt class="p-topLink__img" />
           </a>
         </div>
         <div class="p-header__search">
           <form action="" class="p-search">
             @csrf
             <input type="text" class="p-search__form">
-            <button  type="submit" class="p-search__form">検索</button>
+            <button  type="submit" class="p-search__btn">検索</button>
           </form>
         </div>
         <div class="p-header__menu">
@@ -62,76 +62,87 @@
 
   <main class="l-main">
 <!--ーーーーーーーーーーーーーーーーーー マイページ画面表示 ーーーーーーーーーーーーーーーーーー--> 
-    <div class="l-bg p-stepForm"> 
-      <p class="p-stepForm__title">マイページ</p>
+    <div class="l-bg p-mypage"> 
+      <p class="p-mypage__title">マイページ</p>
 <!-- --------------------------------- 登録したSTEP -------------------------------- -->
       <div class="p-myStepWrap">
-        <i class="fas fa-caret-left p-challengeStepWrap__arrowLeft"></i>
-        <i class="fas fa-caret-right p-challengeStepWrap__arrowRight"></i>
+        <i class="fas fa-caret-left p-myStepWrap__arrowLeft"></i>
+        <i class="fas fa-caret-right p-myStepWrap__arrowRight"></i>
         <p class="p-myStepWrap__title">登録したSTEP</p>
-   　   @for($i = 0; $i < 3; $i++)
-        <div class="p-step">
-          <img src="./images/rika.png" alt="" class="p-step__img">
+        <div class="p-stepContainer">
+@for($i = 0; $i < 3; $i++)
+        <div class="c-step">
+          <img src="./images/rika.png" alt="" class="c-step__img">
           
-          <div class="p-itemCover">
-            <p class="p-itemCover__outline">
+          <div class="c-itemCover">
+            <p class="c-itemCover__outline">
               気温や湿度を入力し、最も目覚めの良いアラームを自動で選択し…
             </p>
-            <a href="#" class="p-itemCover__link">詳細を見る<i class="fas fa-search-plus p-itemCover__icon"></i></a>
+            <a href="#" class="c-itemCover__link">詳細を見る<i class="fas fa-search-plus c-coverIcon"></i></a>
           </div>
             
-          <div class="p-step__wrap">
-            <div class="p-faceicon">
-              <img src="./images/icon.png" style="width: 50px;" alt="" class="p-faceicon__img">
+          <div class="c-step__wrap p-step__wrap">
+            <div class="c-faceicon">
+              <img src="./images/icon.png" alt="" class="c-faceicon__img">
             </div>
-            <span class="p-stepTitle">サルでる分かる英語勉強法！</span>
-            <span class="p-stepCategory c-category">英会話</span>
-            <i class="fas fa-star p-stepFav c-star"></i><span class="p-stepTotal">48</span>
+            <span class="c-stepTitle">サルでる分かる英語勉強法！</span>
+            <div class="c-indexContainer">
+              <span class="c-indexContainer__category c-category">英会話</span>
+              <div class="c-favContainer">
+                <i class="fas fa-star c-favContainer__icon c-star"></i>
+                <span class="c-favContainer__total">48</span>
+              </div>
+            </div>
           </div>
         </div>
-       @endfor
+@endfor
+       </div>
     　</div>
 <!-- --------------------------------- チャレンジ中STEP -------------------------------- -->
       <div class="p-challengeStepWrap">
         <i class="fas fa-caret-left p-challengeStepWrap__arrowLeft"></i>
         <i class="fas fa-caret-right p-challengeStepWrap__arrowRight"></i>
         <p class="p-challengeStepWrap__title">チャレンジ中STEP</p>
-   　   @for($i = 0; $i < 3; $i++)
-        <div class="p-step">
-          <img src="./images/rika.png" alt="" class="p-step__img">
-          
-          <div class="p-itemCover">
-            <p class="p-itemCover__outline">
-              気温や湿度を入力し、最も目覚めの良いアラームを自動で選択し…
-            </p>
-            <a href="#" class="p-itemCover__link">詳細を見る<i class="fas fa-search-plus p-itemCover__icon"></i></a>
-          </div>
+        <div class="p-stepContainer">
+@for($i = 0; $i < 3; $i++)
+          <div class="c-step">
+            <img src="./images/rika.png" alt="" class="c-step__img">
             
-          <div class="p-step__wrap">
-            <div class="p-faceicon">
-              <img src="./images/icon.png" style="width: 50px;" alt="" class="p-faceicon__img">
+            <div class="c-itemCover">
+              <p class="c-itemCover__outline">
+                気温や湿度を入力し、最も目覚めの良いアラームを自動で選択し…
+              </p>
+              <a href="#" class="c-itemCover__link">詳細を見る<i class="fas fa-search-plus c-itemCover__icon"></i></a>
             </div>
-            <span class="p-stepTitle">サルでる分かる英語勉強法！</span>
-            <span class="p-stepPercent">90%達成中/残り10%</span>
-            <div class="p-gauge">
-              <span class="p-gauge__label">0%</span>
-              <span class="p-gauge__fill">
-                <span class="p-gauge__fill--label">0%</span>
-              </span>
+              
+            <div class="c-step__wrap p-step__wrap p-step__wrap--big">
+              <div class="c-faceicon">
+                <img src="./images/icon.png" alt="" class="c-faceicon__img">
+              </div>
+              <span class="c-stepTitle">サルでる分かる英語勉強法！</span>
+              <div class="p-gaugeContainer">
+                <span class="p-stepPercent">90%達成中/残り10%</span>
+                <div class="p-gauge">
+                  <span class="p-gauge__label">0%</span>
+                  <span class="p-gauge__fill">
+                    <span class="p-gauge__fill--label">0%</span>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-       @endfor
+@endfor
+       </div>
     　</div>
   　</div>
   </main>
 
 
   <div class="l-footer">
-      <ul class="p-footerMenu">
-        <li class="p-footerMenu__list">特定商取引法</li>
-        <li class="p-footerMenu__list">プライバシーポリシー</li>
-        <li class="p-footerMenu__list">Step</li>
+      <ul class="l-footerMenu">
+        <li class="l-footerMenu__list">特定商取引法</li>
+        <li class="l-footerMenu__list">プライバシーポリシー</li>
+        <li class="l-footerMenu__list">Step</li>
       </ul>
   </div>
 </div>

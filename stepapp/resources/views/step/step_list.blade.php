@@ -93,26 +93,26 @@
   
     <div class="p-stepList__container">
     @for($i = 0; $i < 9; $i++)
-      <div class="p-step">
-        <img src="./images/rika.png" alt="" class="p-step__img">
+      <div class="c-step">
+        <img src="./images/rika.png" alt="" class="c-step__img">
         
-        <div class="p-itemCover">
-          <p class="p-itemCover__outline">
+        <div class="c-itemCover">
+          <p class="c-itemCover__outline">
             気温や湿度を入力し、最も目覚めの良いアラームを自動で選択し…
           </p>
-          <a href="#" class="p-itemCover__link">詳細を見る<i class="fas fa-search-plus p-coverIcon"></i></a>
+          <a href="#" class="c-itemCover__link">詳細を見る<i class="fas fa-search-plus c-coverIcon"></i></a>
         </div>
           
-        <div class="p-step__wrap">
-          <div class="p-faceicon">
-            <img src="./images/icon.png" alt="" class="p-faceicon__img">
+        <div class="c-step__wrap">
+          <div class="c-faceicon">
+            <img src="./images/icon.png" alt="" class="c-faceicon__img">
            </div>
-          <span class="p-stepTitle">サルでる分かる英語勉強法！</span>
-          <div class="p-indexContainer">
-            <span class="p-indexContainer__category c-category">英会話</span>
-            <div class="p-favContainer">
-              <i class="fas fa-star p-favContainer__icon c-star"></i>
-              <span class="p-favContainer__total">48</span>
+          <span class="c-stepTitle">サルでる分かる英語勉強法！</span>
+          <div class="c-indexContainer">
+            <span class="c-indexContainer__category c-category">英会話</span>
+            <div class="c-favContainer">
+              <i class="fas fa-star c-favContainer__icon c-star"></i>
+              <span class="c-favContainer__total">48</span>
             </div>
           </div>
         </div>
