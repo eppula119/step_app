@@ -1110,12 +1110,24 @@ h3 {
   margin-top: 60px;
 }
 
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep__heading {
+    margin-top: calc( 40px + 5px);
+  }
+}
+
 .p-stepForm .p-registerStep__title {
   width: 100%;
   border: none;
   border-radius: 6px;
   padding: 10px 20px;
   letter-spacing: 2px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep .p-titleMsg {
+    font-size: 1.2rem;
+  }
 }
 
 .p-stepForm .p-registerStep__content {
@@ -1129,12 +1141,25 @@ h3 {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep__content {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep .p-contentMsg {
+    font-size: 1.2rem;
+  }
+}
+
 .p-stepForm .p-registerStep .p-fileContainer {
   width: 100%;
   height: 200px;
   margin: 0 auto;
   border: none;
   border-radius: 6px;
+  background-color: white;
 }
 
 .p-stepForm .p-registerStep .p-fileContainer__airDrop {
@@ -1169,12 +1194,24 @@ h3 {
   height: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep .p-fileContainer__msg {
+    font-size: 1.2rem;
+  }
+}
+
 .p-stepForm .p-registerStep__category {
   width: 30%;
   height: 50px;
   padding: 5px 10px;
   border: none;
   border-radius: 6px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep__category {
+    width: 100%;
+  }
 }
 
 .p-stepForm .p-registerStep__time .p-stepTime {
@@ -1184,6 +1221,18 @@ h3 {
   padding: 5px 10px;
   height: 50px;
   width: 30%;
+}
+
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep__time .p-stepTime {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-stepForm .p-registerStep__time .p-timeMsg {
+    font-size: 1.2rem;
+  }
 }
 
 .p-btnContainer {
@@ -1197,6 +1246,15 @@ h3 {
 .p-btnContainer__update {
   width: 40%;
   border-radius: 6px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-btnContainer__delete,
+  .p-btnContainer__update {
+    margin-top: 15px;
+    padding: 0;
+    height: 40px;
+  }
 }
 
 .p-btnContainer__delete {

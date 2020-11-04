@@ -7,7 +7,7 @@
   @include mq('tab') {
     width: 80%;
   }
-  @include mq('sp') {
+  @include mq() {
     width: 100%;
     padding-left: $space_xl;
     padding-right: $space_xl;
@@ -18,6 +18,9 @@
     &__heading {
       font-size: $font-size_2l;
       margin-top: $space_6l;
+      @include mq() {
+        margin-top: calc( #{ $space_4l } + #{ $space_s });
+      }
     }
     &__title {
       width: 100%;
@@ -27,7 +30,9 @@
       letter-spacing: 2px;
     }
     .p-titleMsg {
-
+      @include mq() {
+        font-size: $font-size_xs;
+      }
     }
     &__content {
       width: 100%;
@@ -38,9 +43,14 @@
       border-radius: 6px;
       padding: $space_m $space_xl;
       box-sizing: border-box;
+      @include mq() {
+        height: $height_2l;
+      }
     }
     .p-contentMsg {
-
+      @include mq() {
+        font-size: $font-size_xs;
+      }
     }
     .p-fileContainer {
       width: 100%;
@@ -48,7 +58,7 @@
       margin: 0 auto;
       border: none;
       border-radius: 6px;
-
+      background-color: $color_light100;
       &__airDrop {
         display: inline-block;
         width: 100%;
@@ -78,7 +88,9 @@
         }
       }
       &__msg {
-
+        @include mq() {
+          font-size: $font-size_xs;
+        }
       }
     }
     &__category {
@@ -87,6 +99,9 @@
       padding: $space_s $space_m;
       border: none;
       border-radius: 6px;
+      @include mq() {
+        width: 100%;
+      }
       .p-selectCategory {
       }
     }
@@ -99,9 +114,14 @@
         padding: $space_s $space_m;
         height: $height_ss;
         width: 30%;
+        @include mq() {
+          width: 100%;
+        }
       }
       .p-timeMsg {
-
+        @include mq() {
+         font-size: $font-size_xs;
+        }
       }
     }
   }
