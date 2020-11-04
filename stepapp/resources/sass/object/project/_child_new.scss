@@ -10,6 +10,9 @@
   background-color: $color_light100;
   border-radius: 10px;
   padding: $space_xl $space_4l;
+  @include mq() {
+    padding: $space_xl $space_l;
+  }
   &__heading {
     font-size: $font-size_2l;
     margin-top: $space_6l;
@@ -35,6 +38,9 @@
     padding: $space_m $space_xl;
     box-sizing: border-box;
     background-color: $color_form;
+    @include mq() {
+      height: $height_2l;
+    }
   }
   .p-contentMsg {
 
@@ -78,6 +84,11 @@
 
     }
   }
+  .p-fileContainer--background {
+    @include mq() {
+      background-color: $color_form;
+    }
+  }
   &__time {
 
     .p-stepTime {
@@ -88,9 +99,14 @@
       height: $height_ss;
       width: 30%;
       background-color: $color_form;
+      @include mq() {
+        width: 100%;
+      }
     }
     .p-timeMsg {
-
+      @include mq() {
+        font-size: $font-size_xs;
+      }
     }
   }
 

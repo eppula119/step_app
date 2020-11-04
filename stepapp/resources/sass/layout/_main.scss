@@ -5,7 +5,9 @@
 }
 .l-main {
   background-color: $color_main;
-  height: $height_9l;
   height: calc( #{$height_9l} + #{$height_m} );
+  @include mq() {
+    height: calc( #{$height_9l} + #{$height_2l} );
+  }
 }
 

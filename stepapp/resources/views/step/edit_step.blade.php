@@ -81,7 +81,7 @@
         </span>
 
         <p class="p-registerStep__heading">画像</p>
-        <div class="p-fileContainer">
+        <div class="p-fileContainer c-imgContainer--backgroundWhite">
           <label class="p-fileContainer__airDrop">
             ドラッグ＆ドロップ
             <input type="file" class="p-dropImg" name="image"/>

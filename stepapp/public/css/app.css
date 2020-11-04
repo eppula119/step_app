@@ -292,8 +292,13 @@ h3 {
 
 .l-main {
   background-color: #91ced9;
-  height: 1500px;
   height: calc( 1500px + 200px );
+}
+
+@media screen and (max-width: 767px) {
+  .l-main {
+    height: calc( 1500px + 500px );
+  }
 }
 
 .l-hero {
@@ -446,6 +451,10 @@ h3 {
 
 .c-passLink:hover:after {
   width: 100%;
+}
+
+.c-imgContainer--backgroundWhite {
+  background-color: white;
 }
 
 .c-btn {
@@ -1159,7 +1168,6 @@ h3 {
   margin: 0 auto;
   border: none;
   border-radius: 6px;
-  background-color: white;
 }
 
 .p-stepForm .p-registerStep .p-fileContainer__airDrop {
@@ -1276,6 +1284,12 @@ h3 {
   padding: 20px 40px;
 }
 
+@media screen and (max-width: 767px) {
+  .p-childForm {
+    padding: 20px 15px;
+  }
+}
+
 .p-childForm__heading {
   font-size: 2.4rem;
   margin-top: 60px;
@@ -1300,6 +1314,12 @@ h3 {
   padding: 10px 20px;
   box-sizing: border-box;
   background-color: rgba(193, 218, 219, 0.3);
+}
+
+@media screen and (max-width: 767px) {
+  .p-childForm__content {
+    height: 500px;
+  }
 }
 
 .p-childForm .p-fileContainer {
@@ -1343,6 +1363,12 @@ h3 {
   height: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  .p-childForm .p-fileContainer--background {
+    background-color: rgba(193, 218, 219, 0.3);
+  }
+}
+
 .p-childForm__time .p-stepTime {
   display: block;
   border: none;
@@ -1351,6 +1377,18 @@ h3 {
   height: 50px;
   width: 30%;
   background-color: rgba(193, 218, 219, 0.3);
+}
+
+@media screen and (max-width: 767px) {
+  .p-childForm__time .p-stepTime {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-childForm__time .p-timeMsg {
+    font-size: 1.2rem;
+  }
 }
 
 .p-registerProfile {
