@@ -7,6 +7,9 @@
     height: calc( #{$space_10l} * 2 );
     margin: 0 auto;
     margin-bottom: $space_4l;
+    @include mq('tab') {
+      text-align: center;
+    }
     &__airDrop {
       display: block;
       background-color: $color_dark050;
@@ -19,6 +22,9 @@
       border-radius: 100px;
       line-height: 200px;
       background-color: $color_light100;
+      @include mq() {
+        width: 60%;
+      }
       .p-userIcon {
         position: absolute;
         top: 0;
@@ -51,7 +57,9 @@
       }
     }
     &__msg {
-
+      @include mq() {
+        font-size: $font-size_xs;
+      }
     }
   }
   &__heading {
@@ -68,16 +76,23 @@
     border-radius: 6px;
     padding: $space_m $space_xl;
     box-sizing: border-box;
+    @include mq() {
+      height: $height_xl;
+    }
   }
   .p-contentMsg {
-
+    @include mq() {
+      font-size: $font-size_xs;
+    }
   }
   .p-editEmail {
     width: 100%;
     padding: $space_m $space_xl;
     letter-spacing: 1px;
-    .p-emailMsg {
-
+  }
+  .p-emailMsg {
+    @include mq() {
+      font-size: $font-size_xs;
     }
   }
 }

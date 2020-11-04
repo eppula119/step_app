@@ -1307,6 +1307,12 @@ h3 {
   margin-bottom: 40px;
 }
 
+@media screen and (max-width: 1179px) {
+  .p-registerProfile .p-fileContainer {
+    text-align: center;
+  }
+}
+
 .p-registerProfile .p-fileContainer__airDrop {
   display: block;
   background-color: #C9D0D6;
@@ -1319,6 +1325,12 @@ h3 {
   border-radius: 100px;
   line-height: 200px;
   background-color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .p-registerProfile .p-fileContainer__airDrop {
+    width: 60%;
+  }
 }
 
 .p-registerProfile .p-fileContainer__airDrop .p-userIcon {
@@ -1355,6 +1367,12 @@ h3 {
   height: 100%;
 }
 
+@media screen and (max-width: 767px) {
+  .p-registerProfile .p-fileContainer__msg {
+    font-size: 1.2rem;
+  }
+}
+
 .p-registerProfile__heading {
   font-size: 2.2rem;
   display: block;
@@ -1372,10 +1390,28 @@ h3 {
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 767px) {
+  .p-registerProfile__content {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-registerProfile .p-contentMsg {
+    font-size: 1.2rem;
+  }
+}
+
 .p-registerProfile .p-editEmail {
   width: 100%;
   padding: 10px 20px;
   letter-spacing: 1px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-registerProfile .p-emailMsg {
+    font-size: 1.2rem;
+  }
 }
 
 .p-headerList {

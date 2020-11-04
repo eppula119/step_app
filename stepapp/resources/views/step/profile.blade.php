@@ -60,7 +60,7 @@
 
   </header>
 
-  <main class="l-form">
+  <main class="l-main">
 <!--ーーーーーーーーーーーーーーーーーー プロフィール画面表示 ーーーーーーーーーーーーーーーーーー--> 
     <div class="l-bg p-stepForm"> 
       <p class="p-stepForm__title">プロフィール</p>
