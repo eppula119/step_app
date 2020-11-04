@@ -10,5 +10,8 @@
       padding: $space_4l;
       box-sizing: border-box;
       color: $color_light100;
+      @include mq('sp') {
+        width: 100%;
+      }
     }
 }

@@ -273,6 +273,12 @@ h3 {
   color: white;
 }
 
+@media screen and (max-width: 767px) {
+  .l-footer .l-footerMenu {
+    width: 100%;
+  }
+}
+
 .l-header {
   background-color: white;
   width: 100%;
@@ -337,6 +343,12 @@ h3 {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .c-formTitle {
+    font-size: 2rem;
+  }
+}
+
 .c-form {
   display: flex;
   flex-direction: column;
@@ -360,6 +372,19 @@ h3 {
   padding-left: 5px;
   border: solid 1px #C9D0D6;
   border-radius: 8px;
+}
+
+@media screen and (max-width: 1179px) {
+  .c-form__input {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .c-form__input {
+    font-size: 1.2rem;
+  }
 }
 
 .c-form .c-invalid {
@@ -394,6 +419,18 @@ h3 {
   font-size: 1.2rem;
   position: relative;
   color: #272B2D;
+}
+
+@media screen and (max-width: 1179px) {
+  .c-passLink {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .c-passLink {
+    font-size: 1.4rem;
+  }
 }
 
 .c-passLink::after {
@@ -432,6 +469,18 @@ h3 {
   box-sizing: border-box;
   padding: 20px 40px;
   margin: 10px 0;
+}
+
+@media screen and (max-width: 1179px) {
+  .c-btnAuth {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .c-btnAuth {
+    padding: 20px;
+  }
 }
 
 .c-btnEntry {
@@ -640,11 +689,36 @@ h3 {
   border-radius: 8px;
 }
 
+@media screen and (max-width: 1179px) {
+  .p-authForm {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-authForm {
+    width: 80%;
+  }
+}
+
 .p-authForm__container {
   width: 50%;
   margin: 0 auto;
   padding: 100px 0;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 1179px) {
+  .p-authForm__container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-authForm__container {
+    width: 100%;
+    padding-top: 80px;
+  }
 }
 
 .p-authForm__container .p-authSns {
@@ -673,6 +747,13 @@ h3 {
   text-align: right;
 }
 
+@media screen and (max-width: 767px) {
+  .p-authForm__container .p-registerLink {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 .p-authForm__container .p-registerLink__link {
   color: #272B2D;
 }
@@ -693,14 +774,38 @@ h3 {
   align-items: center;
 }
 
+@media screen and (max-width: 767px) {
+  .p-header__logo {
+    width: 20%;
+  }
+}
+
 .p-header__logo .p-topLink__img {
   width: 70%;
   margin-left: 30px;
 }
 
+@media screen and (max-width: 767px) {
+  .p-header__logo .p-topLink__img {
+    margin-left: 15px;
+  }
+}
+
 .p-header__search {
   width: 30%;
   height: 35%;
+}
+
+@media screen and (max-width: 1179px) {
+  .p-header__search {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-header__search {
+    width: 60%;
+  }
 }
 
 .p-header__search .p-search {
@@ -722,6 +827,12 @@ h3 {
   letter-spacing: 2px;
 }
 
+@media screen and (max-width: 767px) {
+  .p-header__search .p-search__form {
+    width: 70%;
+  }
+}
+
 .p-header__search .p-search__btn {
   display: block;
   width: 15%;
@@ -740,6 +851,12 @@ h3 {
   width: 100px;
   height: 30px;
   border-radius: 8px;
+}
+
+@media screen and (max-width: 1179px) {
+  .p-header__menu .p-menuBtn {
+    display: none;
+  }
 }
 
 .p-header__menu .p-headerMenu {
@@ -769,6 +886,69 @@ h3 {
 
 .p-header .p-headerMenuTrigger {
   display: none;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  box-sizing: border-box;
+  position: absolute;
+  right: 25px;
+  top: 30px;
+  width: 40px;
+  height: 32px;
+  z-index: 3;
+}
+
+@media screen and (max-width: 1179px) {
+  .p-header .p-headerMenuTrigger {
+    display: inline-block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-header .p-headerMenuTrigger {
+    right: 15px;
+  }
+}
+
+.p-header .p-headerMenuTrigger__border {
+  display: inline-block;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.p-header .p-headerMenuTrigger__border:nth-of-type(1) {
+  top: 0;
+  background-color: #8B98A2;
+}
+
+.p-header .p-headerMenuTrigger__border:nth-of-type(2) {
+  top: 14px;
+  background-color: #8B98A2;
+}
+
+.p-header .p-headerMenuTrigger__border:nth-of-type(3) {
+  bottom: 0;
+  background-color: #8B98A2;
+}
+
+.p-header .p-headerMenuTrigger.active .p-header .p-headerMenuTrigger__border:nth-of-type(1) {
+  transform: translateY(12px) rotate(-45deg);
+  background-color: #C9D0D6;
+}
+
+.p-header .p-headerMenuTrigger.active .p-header .p-headerMenuTrigger__border:nth-of-type(2) {
+  opacity: 0;
+}
+
+.p-header .p-headerMenuTrigger.active .p-header .p-headerMenuTrigger__border:nth-of-type(3) {
+  transform: translateY(-15px) rotate(45deg);
+  background-color: #C9D0D6;
 }
 
 .p-heroImg {
@@ -904,6 +1084,21 @@ h3 {
   margin: 0 auto;
   padding-top: 60px;
   font-size: 1.6rem;
+}
+
+@media screen and (max-width: 1179px) {
+  .p-stepForm {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-stepForm {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
 }
 
 .p-stepForm .p-registerStep {
@@ -1622,6 +1817,12 @@ h3 {
   overflow: hidden;
 }
 
+@media screen and (max-width: 767px) {
+  .p-childContainer {
+    padding: 40px 20px;
+  }
+}
+
 .p-childContainer__index {
   margin-bottom: 30px;
 }
@@ -1631,12 +1832,27 @@ h3 {
   margin-right: 15px;
 }
 
+@media screen and (max-width: 767px) {
+  .p-childContainer__index .p-childTitle {
+    font-size: 2.8rem;
+  }
+}
+
 .p-childContainer__index .p-childTime {
   background-color: #62b8bd;
   font-size: 1.2rem;
   padding: 5px 20px;
   border-radius: 20px;
   color: white;
+}
+
+@media screen and (max-width: 767px) {
+  .p-childContainer__index .p-childTime {
+    display: block;
+    width: 80%;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
 }
 
 .p-childContainer__title {
@@ -1688,6 +1904,12 @@ h3 {
   color: white;
   padding: 5px 15px;
   border-radius: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .p-childContainer .p-nextBtn {
+    width: 100%;
+  }
 }
 
 /*!

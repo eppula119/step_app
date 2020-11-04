@@ -5,11 +5,17 @@
   padding: $space_4l;
   box-sizing: border-box;
   overflow: hidden;
+  @include mq('sp') {
+      padding: $space_4l $space_xl;
+  }
   &__index {
     margin-bottom: $space_3l;
     .p-childTitle {
       font-size: $font-size_xl;
       margin-right: $space_l;
+      @include mq('sp') {
+      font-size: $font-size_3l;
+      }
     }
     .p-childTime {
       background-color: $color_sub;
@@ -17,6 +23,12 @@
       padding: $space_s $space_xl;
       border-radius: 20px;
       color: $color_light100;
+      @include mq('sp') {
+        display: block;
+        width: 80%;
+        font-size: $font-size_default;
+        margin-top: $space_m;
+      }
     }
   }
   &__title {
@@ -64,5 +76,8 @@
     color: $color_light100;
     padding: $space_s $space_l;
     border-radius: 10px;
+    @include mq('sp') {
+      width: 100%;
+    }
   }
 }

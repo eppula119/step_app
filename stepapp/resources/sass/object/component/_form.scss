@@ -7,6 +7,9 @@
   @include mq() {
     font-size: $font-size_xs;
   }
+  @include mq() {
+    font-size: $font-size_xl;
+  }
 }
 .c-form {
   display: flex;
@@ -26,6 +29,13 @@
     padding-left: $space_s;
     border: solid 1px $color_dark050;
     border-radius: 8px;
+    @include mq('tab') {
+      font-size: $font-size_m;
+      letter-spacing: 1px;
+    }
+    @include mq() {
+      font-size: $font-size_xs;
+    }
   }
   .c-invalid {
     margin-bottom: $space_xl;
@@ -41,6 +51,7 @@
   &__passlink {
     text-align: right;
     color: $color_dark100;
+    
   }
   &__comment {
     margin: $space_m 0 $space_xl 0;
@@ -53,6 +64,12 @@
   font-size: $font-size_xs;
   position: relative;
   color: $color_dark100;
+  @include mq('tab') {
+    font-size: $font-size_m;
+  }
+  @include mq() {
+    font-size: $font-size_s;
+  }
   &::after {
     position: absolute;
     content: '';

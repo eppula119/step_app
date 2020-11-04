@@ -19,6 +19,12 @@
   box-sizing: border-box;
   padding: $space_xl $space_4l;
   margin: $space_m 0;
+  @include mq('tab') {
+    font-size: $font-size_m;
+  } 
+  @include mq() {
+    padding: $space_xl;
+  }
 }
 .c-btnEntry {
   float: right;

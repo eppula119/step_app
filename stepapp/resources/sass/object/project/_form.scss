@@ -6,11 +6,24 @@
   position: relative;
   top: $space_10l;
   border-radius: 8px;
+  @include mq('tab') {
+    width: 60%;
+  }
+  @include mq() {
+    width: 80%;
+  }
   &__container {
     width: 50%;
     margin: 0 auto;
     padding: $space_10l 0;
     box-sizing: border-box;
+    @include mq('tab') {
+      width: 80%;
+    }
+    @include mq() {
+      width: 100%;
+      padding-top: $space_8l;
+    }
     .p-authSns {
       width: 200%;
       padding-right: "-" + $space_10l;
@@ -34,6 +47,10 @@
     .p-registerLink {
       display: block;
       text-align: right;
+      @include mq() {
+        width: 80%;
+        margin:  0 auto;
+      }
       &__link {
         color: $color_dark100;
       }
