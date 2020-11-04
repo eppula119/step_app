@@ -14,6 +14,11 @@
     border-radius: 20px;
     width: 20%;
     margin-right: $space_xl;
+    @include  mq() {
+      width: 30%;
+      margin-right: $space_m;
+      font-size: $font-size_default;
+    }
   }
   &__time {
     background-color: $color_light100;
@@ -25,13 +30,20 @@
     padding: $space_m 0;
     color: $color_main;
     margin-right: $space_xl;
+    @include  mq() {
+      width: 50%;
+      margin-right: 0;
+      font-size: $font-size_default;
+    }
   }
   &__fav {
     color: $color_fav;
     font-size: $font-size_3l;
     position: absolute;
     right: 0;
-    
+    @include  mq() {
+      top: -4px;
+    }
     .p-fav {
 
     }
@@ -76,6 +88,10 @@
     padding-right: 8px;
     margin-right: 3px;
     box-sizing: border-box;
+    @include  mq() {
+      display: block;
+      border: none;
+    }
   }
   &__title {
 

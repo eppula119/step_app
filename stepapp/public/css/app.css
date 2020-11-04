@@ -1859,6 +1859,14 @@ h3 {
   margin-right: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .p-indexContainer__category {
+    width: 30%;
+    margin-right: 10px;
+    font-size: 1rem;
+  }
+}
+
 .p-indexContainer__time {
   background-color: white;
   display: inline-block;
@@ -1871,11 +1879,25 @@ h3 {
   margin-right: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .p-indexContainer__time {
+    width: 50%;
+    margin-right: 0;
+    font-size: 1rem;
+  }
+}
+
 .p-indexContainer__fav {
   color: #339999;
   font-size: 2.8rem;
   position: absolute;
   right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .p-indexContainer__fav {
+    top: -4px;
+  }
 }
 
 .p-detailTitle {
@@ -1920,6 +1942,13 @@ h3 {
   padding-right: 8px;
   margin-right: 3px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+  .p-childStep__number {
+    display: block;
+    border: none;
+  }
 }
 
 .p-btnChallenge {
