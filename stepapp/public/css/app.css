@@ -1733,6 +1733,12 @@ h3 {
   font-size: 1.6rem;
 }
 
+@media screen and (max-width: 767px) {
+  .p-mypage {
+    width: 90%;
+  }
+}
+
 .p-mypage__title {
   font-size: 4rem;
   text-align: center;
@@ -1755,12 +1761,26 @@ h3 {
   font-size: 4rem;
 }
 
+@media screen and (max-width: 1179px) {
+  .p-mypage .p-myStepWrap__arrowLeft,
+  .p-mypage .p-challengeStepWrap__arrowLeft {
+    display: none;
+  }
+}
+
 .p-mypage .p-myStepWrap__arrowRight,
 .p-mypage .p-challengeStepWrap__arrowRight {
   position: absolute;
   top: 50%;
   right: 15px;
   font-size: 4rem;
+}
+
+@media screen and (max-width: 1179px) {
+  .p-mypage .p-myStepWrap__arrowRight,
+  .p-mypage .p-challengeStepWrap__arrowRight {
+    display: none;
+  }
 }
 
 .p-mypage .p-myStepWrap__title,
@@ -1780,6 +1800,33 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1179px) {
+  .p-mypage .p-myStepWrap .p-stepContainer,
+  .p-mypage .p-challengeStepWrap .p-stepContainer {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 1179px) {
+  .p-mypage .p-myStepWrap .p-stepContainer__step,
+  .p-mypage .p-challengeStepWrap .p-stepContainer__step {
+    display: inline-block;
+    width: 45%;
+    white-space: normal;
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .p-mypage .p-myStepWrap .p-stepContainer__step,
+  .p-mypage .p-challengeStepWrap .p-stepContainer__step {
+    width: 90%;
+    margin-right: 10px;
+  }
 }
 
 .p-mypage .p-challengeStepWrap {
@@ -1802,6 +1849,10 @@ h3 {
 .p-gaugeContainer {
   display: block;
   margin-top: 20px;
+}
+
+.p-gaugeContainer .p-stepPercent {
+  font-size: 1.2rem;
 }
 
 .p-gaugeContainer .p-gauge {
@@ -1896,7 +1947,7 @@ h3 {
 
 @media screen and (max-width: 767px) {
   .p-indexContainer__fav {
-    top: -4px;
+    top: -3px;
   }
 }
 
