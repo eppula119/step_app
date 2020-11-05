@@ -70,8 +70,8 @@
         <i class="fas fa-caret-right p-myStepWrap__arrowRight"></i>
         <p class="p-myStepWrap__title">登録したSTEP</p>
         <div class="p-stepContainer">
-@for($i = 0; $i < 3; $i++)
-        <div class="c-step">
+@for($i = 0; $i < 4; $i++)
+        <div class="c-step p-stepContainer__step">
           <img src="./images/rika.png" alt="" class="c-step__img">
           
           <div class="c-itemCover">
@@ -104,8 +104,8 @@
         <i class="fas fa-caret-right p-challengeStepWrap__arrowRight"></i>
         <p class="p-challengeStepWrap__title">チャレンジ中STEP</p>
         <div class="p-stepContainer">
-@for($i = 0; $i < 3; $i++)
-          <div class="c-step">
+@for($i = 0; $i < 4; $i++)
+          <div class="c-step p-stepContainer__step">
             <img src="./images/rika.png" alt="" class="c-step__img">
             
             <div class="c-itemCover">
