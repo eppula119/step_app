@@ -86,14 +86,14 @@
 
   </header>
 
-  <main class="l-main">
+  <main class="l-stepList">
 <!--ーーーーーーーーーーーーーーーーーー STEP一覧画面表示 ーーーーーーーーーーーーーーーーーー--> 
   <div class="l-bg p-stepList"> 
 
   
     <div class="p-stepList__container">
     @for($i = 0; $i < 9; $i++)
-      <div class="c-step">
+      <div class="c-step p-step">
         <img src="./images/rika.png" alt="" class="c-step__img">
         
         <div class="c-itemCover">

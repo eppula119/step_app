@@ -10,4 +10,13 @@
     height: calc( #{$height_9l} + #{$height_2l} );
   }
 }
+.l-stepList {
+  background-color: $color_main;
+  @include mq('tab') {
+    height: calc( #{$height_9l} + #{$height_7l} );
+  }
+  @include mq() {
+    height: calc( #{ $height_11l } + #{ $height_4l } );
+  }
+}
 
