@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// APIのURL以外のリクエストに対してはindexテンプレートを返す
+// 画面遷移はフロントエンドのVueRouterが制御する
+    Route::get('/{any?}', function () {
+        return view('index');
+    })->where('any', '.+');
 
 Auth::routes();
 
@@ -77,3 +79,6 @@ Route::get('/child_detail', function () {
 Route::get('/top', function () {
     return view('step/top');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
