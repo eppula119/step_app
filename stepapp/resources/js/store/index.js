@@ -5,7 +5,7 @@ import auth from './auth'
 import error from './error'
 // import idea from './idea'
 // import paging from './paging'
-// import message from './message'
+import message from './message'
 // import modal from './modal'
 
 Vue.use(Vuex)
@@ -13,10 +13,10 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   modules: {
     auth,
-    error
+    error,
     // idea,
     // paging,
-    // message,
+    message
     // modal
   }
 })

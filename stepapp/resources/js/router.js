@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // コンポーネントをインポートする
 import StepList from './components/StepList.vue'
 import Login from './components/Login.vue'
+import SystemError from './pages/errors/System.vue'
 
 // ナビゲーションガードを使用するためstoreをインポート
 import store from './store'
@@ -27,6 +28,10 @@ const routes = [
         next()
       }
     }
+  },
+  {
+    path: '/500',
+    component: SystemError
   }
 ]
 

@@ -13,8 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::get('/user', 'StepController@isLogin')->name('user'); // ログインユーザー
 
 Route::post('/register', 'Auth\RegisterController@register')->name('register'); //ユーザー登録
+Route::post('/login', 'Auth\LoginController@login')->name('login'); //ログイン
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout'); //ログアウト

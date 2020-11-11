@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log; //ログを取る
 
 class RegisterController extends Controller
 {
@@ -53,6 +55,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+        Log::debug('バリデーション完了');
     }
 
     /**
@@ -72,7 +75,7 @@ class RegisterController extends Controller
 
     // ★ メソッド追加
     protected function registered(Request $request, $user)
-    {
+    {Log::debug('ユーザー作成');
         return $user;
     }
 }
