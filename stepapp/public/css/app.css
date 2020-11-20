@@ -885,7 +885,6 @@ h3 {
 }
 
 .p-header__menu .p-headerMenu {
-  display: none;
   position: absolute;
   background: white;
   font-size: 1.4rem;

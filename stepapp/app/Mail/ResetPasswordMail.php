@@ -16,21 +16,48 @@ class ResetPasswordMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
-        //
+        $this->token = $token;
     }
+    // public function __construct($token)
+    // {
+    //     $this->token = $token; // 引数でトークンを受け取る
+    // }
 
     /**
      * Build the message.
      *
      * @return $this
      */
+    // public function build()
+    // {
+    //     $from = config('mail.from.address');
+    // return $this
+    //       ->from($from) // 送信元
+    //       ->subject('リセットパスワードメール') // メールタイトル
+    //       ->view('mail.reset_password_mail')
+    //       ->with(['url' => $this->token]);
+    // }
     public function build()
     {
-        return $this
-        ->from('firstdouga@gmail.com') //　送信元
-        ->subject('テスト送信です') // メールタイトル
-        ->view('view.name'); // メール本文のテンプレートとなるviewを設定
+        // 件名
+        $subject = 'パスワードリセットメール';
+
+        // コールバックURLをルート名で取得
+        $baseUrl = config('app.url'); // .envの「APP_URL」に設定したurlを取得
+        $token = $this->token;
+        $url = "{$baseUrl}/reset-password/{$token}";
+
+        // 送信元のアドレス
+        // .envの「MAIL_FROM_ADDRESS」に設定したアドレスを取得
+        $from = config('mail.from.address');
+
+        return $this->from($from)
+            ->subject($subject)
+            // 送信メールのビュー
+            ->view('mail.reset_password_mail')
+            // ビューで使う変数を渡す
+            ->with('url', $url);
     }
 }

@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // コンポーネントをインポートする
 import StepList from './components/StepList.vue'
 import Login from './components/Login.vue'
+import Reset from "./components/Reset.vue";
 import SystemError from './pages/errors/System.vue'
 
 // ナビゲーションガードを使用するためstoreをインポート
@@ -26,6 +27,17 @@ const routes = [
         next('/')
       } else {
         next()
+      }
+    }
+  },
+  {
+    path: "/reset",
+    component: Reset,
+    beforeEnter(to, from, next) {
+      if (store.getters["auth/check"]) {
+        next("/");
+      } else {
+        next();
       }
     }
   },

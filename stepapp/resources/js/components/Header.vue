@@ -13,8 +13,8 @@
         </form>
       </div>
       <div class="p-header__menu">
-        <button class="p-menuBtn">メニュー</button>
-        <div class="p-headerMenu">
+        <button class="p-menuBtn" v-on:click="isActive = !isActive">メニュー</button>
+        <div class="p-headerMenu" v-show="isActive">
           <ul class="p-headerMenu__list">
             <li class="p-menuItem">マイページ</li>
             <li class="p-menuItem">トップページ</li>
@@ -44,7 +44,8 @@ import { mapState, mapGetters } from "vuex";
 export default {
   data() {
     return {
-      tab: 1
+      tab: 1,
+      isActive: false
     };
   },
   computed: {

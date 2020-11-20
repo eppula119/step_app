@@ -4,7 +4,7 @@
       <div class="p-authForm__container">
         <p class="c-formTitle">ログイン</p>
         <!-------------------------------------- ログインフォーム ----------------------------------------------->
-        <form method="post" class="c-form" @submit.prevent="login" v-show="tab == false">
+        <form method="post" class="c-form" @submit.prevent="login" v-show="tab == 1">
           <span class="c-form__heading">メールアドレス</span>
           <input
             type="email"
@@ -51,12 +51,12 @@
 
           <input type="submit" class="c-btn c-btnAuth" value="ログイン" />
         </form>
-        <span class="p-registerLink" v-show="tab == false">
+        <span class="p-registerLink" v-show="tab == 1">
           →
           <a href="#" class="p-registerLink__link">ユーザー登録</a>
         </span>
         <!-------------------------------------- ユーザー登録フォーム ----------------------------------------------->
-        <form method="post" class="c-form" @submit.prevent="register" v-show="tab === true">
+        <form method="post" class="c-form" @submit.prevent="register" v-show="tab === 2">
           <span class="c-form__heading">メールアドレス</span>
           <input
             type="email"
@@ -109,6 +109,31 @@
 
           <input type="submit" class="c-btnAuth c-btn" value="ユーザー登録" />
         </form>
+        <!-------------------------------------- パスワード忘れた場合のフォーム ----------------------------------------------->
+        <form method="post" class="c-form" @submit.prevent="forgot" v-show="tab === 3">
+          <span class="c-form__heading">メールアドレス</span>
+          <input
+            type="email"
+            name="email"
+            class="c-form__input is-invalid"
+            value
+            required
+            autocomplete="email"
+            autofocus
+            placeholder="例：hogehoge@gmail.com"
+            v-model="forgotForm.email"
+          />
+
+          <span class="c-invalid" role="alert" v-if="forgotErrors">
+            <ul v-if="forgotErrors.email">
+              <li v-for="msg in forgotErrors.email" :key="msg">{{ msg }}</li>
+            </ul>
+          </span>
+
+          <p class="c-form__comment">ご登録メールアドレスを送信してください。後ほど再設定のためのリンクを記載したメールを送らせていただきます。</p>
+
+          <input type="submit" class="c-btn c-btnAuth" value="送信" />
+        </form>
       </div>
     </div>
   </main>
@@ -120,7 +145,7 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {
-      tab: true,
+      tab: 3,
       loginForm: {
         email: "",
         password: ""
@@ -129,6 +154,9 @@ export default {
         email: "",
         password: "",
         password_confirmation: ""
+      },
+      forgotForm: {
+        email: ""
       }
     };
   },
@@ -136,7 +164,8 @@ export default {
   computed: mapState({
     apiStatus: state => state.auth.apiStatus,
     loginErrors: state => state.auth.loginErrorMessages, // ログインエラーメッセージstatusを参照
-    registerErrors: state => state.auth.registerErrorMessages // ユーザー登録エラーメッセージstatusを参照
+    registerErrors: state => state.auth.registerErrorMessages, // ユーザー登録エラーメッセージstatusを参照
+    forgotErrors: state => state.auth.forgotErrorMessages // パスワード変更エラーメッセージstatusを参照
   }),
 
   methods: {
@@ -153,10 +182,23 @@ export default {
         this.$router.push("/"); // トップページに移動する
       }
     },
+    async forgot() {
+      console.log("メール送信API発動");
+      alert("forgot");
+      await this.$store.dispatch("auth/forgot", this.forgotForm); // authストアのforgotアクションを呼び出す
+      if (this.apiStatus) {
+        this.$store.commit("message/setContent", {
+          content: "パスワードリセットメールを送りました。",
+          timeout: 10000
+        });
+        this.clearError(); // AUTHストアのエラーメッセージをクリア
+      }
+    },
     clearError() {
       // エラーメッセージをクリア
       this.$store.commit("auth/setLoginErrorMessages", null);
       this.$store.commit("auth/setRegisterErrorMessages", null);
+      this.$store.commit("auth/setForgotErrorMessages", null);
     }
   },
   created() {

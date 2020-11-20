@@ -2032,7 +2032,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      tab: 1
+      tab: 1,
+      isActive: false
     };
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
@@ -2210,11 +2211,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      tab: true,
+      tab: 3,
       loginForm: {
         email: "",
         password: ""
@@ -2223,6 +2249,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         email: "",
         password: "",
         password_confirmation: ""
+      },
+      forgotForm: {
+        email: ""
       }
     };
   },
@@ -2236,7 +2265,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     // ログインエラーメッセージstatusを参照
     registerErrors: function registerErrors(state) {
       return state.auth.registerErrorMessages;
-    } // ユーザー登録エラーメッセージstatusを参照
+    },
+    // ユーザー登録エラーメッセージstatusを参照
+    forgotErrors: function forgotErrors(state) {
+      return state.auth.forgotErrorMessages;
+    } // パスワード変更エラーメッセージstatusを参照
 
   }),
   methods: {
@@ -2292,16 +2325,386 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee2);
       }))();
     },
+    forgot: function forgot() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                console.log("メール送信API発動");
+                alert("forgot");
+                _context3.next = 4;
+                return _this3.$store.dispatch("auth/forgot", _this3.forgotForm);
+
+              case 4:
+                // authストアのforgotアクションを呼び出す
+                if (_this3.apiStatus) {
+                  _this3.$store.commit("message/setContent", {
+                    content: "パスワードリセットメールを送りました。",
+                    timeout: 10000
+                  });
+
+                  _this3.clearError(); // AUTHストアのエラーメッセージをクリア
+
+                }
+
+              case 5:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
+    },
     clearError: function clearError() {
       // エラーメッセージをクリア
       this.$store.commit("auth/setLoginErrorMessages", null);
       this.$store.commit("auth/setRegisterErrorMessages", null);
+      this.$store.commit("auth/setForgotErrorMessages", null);
     }
   },
   created: function created() {
     this.clearError();
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Reset.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Reset.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/src/js.cookie.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(js_cookie__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      resetForm: {
+        password: "",
+        password_confirmation: "",
+        token: ""
+      }
+    };
+  },
+  computed: {
+    // authストアのapiStatus
+    apiStatus: function apiStatus() {
+      return this.$store.state.auth.apiStatus;
+    },
+    // authストアのresetErrorMessages
+    resetErrors: function resetErrors() {
+      return this.$store.state.auth.resetErrorMessages;
+    }
+  },
+  methods: {
+    reset: function reset() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.$store.dispatch("auth/reset", _this.resetForm);
+
+              case 2:
+                // 通信成功
+                if (_this.apiStatus) {
+                  // メッセージストアで表示
+                  _this.$store.commit("message/setContent", {
+                    content: "パスワードをリセットしました。",
+                    timeout: 10000
+                  }); // AUTHストアのエラーメッセージをクリア
+
+
+                  _this.clearError(); // フォームをクリア
+
+
+                  _this.clearForm(); // トップページに移動
+
+
+                  _this.$router.push("/");
+                }
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    clearError: function clearError() {
+      // AUTHストアのエラーメッセージをクリア
+      this.$store.commit("auth/setResetErrorMessages", null);
+    },
+    clearForm: function clearForm() {
+      // reset
+      this.resetForm.password = "";
+      this.resetForm.password_confirmation = "";
+      this.resetForm.token = "";
+    }
+  },
+  created: function created() {
+    // クッキーからリセットトークンを取得
+    var token = js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.get("RESETTOKEN"); // リセットトークンがない場合はルートページへ移動させる
+
+    if (this.resetForm.token == null) {
+      // move to home
+      this.$router.push("/");
+    } // フォームにリセットトークンをセット
+
+
+    this.resetForm.token = token; // リセットトークンをクッキーから削除
+
+    if (token) {
+      js_cookie__WEBPACK_IMPORTED_MODULE_1___default.a.remove("RESETTOKEN");
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/js-cookie/src/js.cookie.js":
+/*!*************************************************!*\
+  !*** ./node_modules/js-cookie/src/js.cookie.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * JavaScript Cookie v2.2.1
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+;(function (factory) {
+	var registeredInModuleLoader;
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		registeredInModuleLoader = true;
+	}
+	if (true) {
+		module.exports = factory();
+		registeredInModuleLoader = true;
+	}
+	if (!registeredInModuleLoader) {
+		var OldCookies = window.Cookies;
+		var api = window.Cookies = factory();
+		api.noConflict = function () {
+			window.Cookies = OldCookies;
+			return api;
+		};
+	}
+}(function () {
+	function extend () {
+		var i = 0;
+		var result = {};
+		for (; i < arguments.length; i++) {
+			var attributes = arguments[ i ];
+			for (var key in attributes) {
+				result[key] = attributes[key];
+			}
+		}
+		return result;
+	}
+
+	function decode (s) {
+		return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
+	}
+
+	function init (converter) {
+		function api() {}
+
+		function set (key, value, attributes) {
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			attributes = extend({
+				path: '/'
+			}, api.defaults, attributes);
+
+			if (typeof attributes.expires === 'number') {
+				attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e+5);
+			}
+
+			// We're using "expires" because "max-age" is not supported by IE
+			attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+			try {
+				var result = JSON.stringify(value);
+				if (/^[\{\[]/.test(result)) {
+					value = result;
+				}
+			} catch (e) {}
+
+			value = converter.write ?
+				converter.write(value, key) :
+				encodeURIComponent(String(value))
+					.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+
+			key = encodeURIComponent(String(key))
+				.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
+				.replace(/[\(\)]/g, escape);
+
+			var stringifiedAttributes = '';
+			for (var attributeName in attributes) {
+				if (!attributes[attributeName]) {
+					continue;
+				}
+				stringifiedAttributes += '; ' + attributeName;
+				if (attributes[attributeName] === true) {
+					continue;
+				}
+
+				// Considers RFC 6265 section 5.2:
+				// ...
+				// 3.  If the remaining unparsed-attributes contains a %x3B (";")
+				//     character:
+				// Consume the characters of the unparsed-attributes up to,
+				// not including, the first %x3B (";") character.
+				// ...
+				stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+			}
+
+			return (document.cookie = key + '=' + value + stringifiedAttributes);
+		}
+
+		function get (key, json) {
+			if (typeof document === 'undefined') {
+				return;
+			}
+
+			var jar = {};
+			// To prevent the for loop in the first place assign an empty array
+			// in case there are no cookies at all.
+			var cookies = document.cookie ? document.cookie.split('; ') : [];
+			var i = 0;
+
+			for (; i < cookies.length; i++) {
+				var parts = cookies[i].split('=');
+				var cookie = parts.slice(1).join('=');
+
+				if (!json && cookie.charAt(0) === '"') {
+					cookie = cookie.slice(1, -1);
+				}
+
+				try {
+					var name = decode(parts[0]);
+					cookie = (converter.read || converter)(cookie, name) ||
+						decode(cookie);
+
+					if (json) {
+						try {
+							cookie = JSON.parse(cookie);
+						} catch (e) {}
+					}
+
+					jar[name] = cookie;
+
+					if (key === name) {
+						break;
+					}
+				} catch (e) {}
+			}
+
+			return key ? jar[key] : jar;
+		}
+
+		api.set = set;
+		api.get = function (key) {
+			return get(key, false /* read as raw */);
+		};
+		api.getJSON = function (key) {
+			return get(key, true /* read as json */);
+		};
+		api.remove = function (key, attributes) {
+			set(key, '', extend(attributes, {
+				expires: -1
+			}));
+		};
+
+		api.defaults = {};
+
+		api.withConverter = init;
+
+		return api;
+	}
+
+	return init(function () {});
+}));
+
 
 /***/ }),
 
@@ -3637,53 +4040,78 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "p-header__menu" }, [
-        _c("button", { staticClass: "p-menuBtn" }, [_vm._v("メニュー")]),
+        _c(
+          "button",
+          {
+            staticClass: "p-menuBtn",
+            on: {
+              click: function($event) {
+                _vm.isActive = !_vm.isActive
+              }
+            }
+          },
+          [_vm._v("メニュー")]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "p-headerMenu" }, [
-          _c("ul", { staticClass: "p-headerMenu__list" }, [
-            _c("li", { staticClass: "p-menuItem" }, [_vm._v("マイページ")]),
-            _vm._v(" "),
-            _c("li", { staticClass: "p-menuItem" }, [_vm._v("トップページ")]),
-            _vm._v(" "),
-            _c("li", { staticClass: "p-menuItem" }, [_vm._v("ユーザー登録")]),
-            _vm._v(" "),
-            _vm.isLogin
-              ? _c("li", { staticClass: "p-menuItem" }, [
-                  _c(
-                    "form",
-                    {
-                      attrs: { action: "", method: "POST" },
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          return _vm.logout($event)
+        _c(
+          "div",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isActive,
+                expression: "isActive"
+              }
+            ],
+            staticClass: "p-headerMenu"
+          },
+          [
+            _c("ul", { staticClass: "p-headerMenu__list" }, [
+              _c("li", { staticClass: "p-menuItem" }, [_vm._v("マイページ")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "p-menuItem" }, [_vm._v("トップページ")]),
+              _vm._v(" "),
+              _c("li", { staticClass: "p-menuItem" }, [_vm._v("ユーザー登録")]),
+              _vm._v(" "),
+              _vm.isLogin
+                ? _c("li", { staticClass: "p-menuItem" }, [
+                    _c(
+                      "form",
+                      {
+                        attrs: { action: "", method: "POST" },
+                        on: {
+                          submit: function($event) {
+                            $event.preventDefault()
+                            return _vm.logout($event)
+                          }
                         }
-                      }
-                    },
+                      },
+                      [
+                        _c(
+                          "button",
+                          {
+                            staticClass: "p-logout c-btn",
+                            attrs: { type: "submit" }
+                          },
+                          [_vm._v("ログアウト")]
+                        )
+                      ]
+                    )
+                  ])
+                : _c(
+                    "li",
+                    { staticClass: "p-menuItem" },
                     [
-                      _c(
-                        "button",
-                        {
-                          staticClass: "p-logout c-btn",
-                          attrs: { type: "submit" }
-                        },
-                        [_vm._v("ログアウト")]
-                      )
-                    ]
+                      _c("RouterLink", { attrs: { to: "/login" } }, [
+                        _vm._v("ログイン")
+                      ])
+                    ],
+                    1
                   )
-                ])
-              : _c(
-                  "li",
-                  { staticClass: "p-menuItem" },
-                  [
-                    _c("RouterLink", { attrs: { to: "/login" } }, [
-                      _vm._v("ログイン")
-                    ])
-                  ],
-                  1
-                )
-          ])
-        ])
+            ])
+          ]
+        )
       ]),
       _vm._v(" "),
       _vm._m(1)
@@ -3753,8 +4181,8 @@ var render = function() {
               {
                 name: "show",
                 rawName: "v-show",
-                value: _vm.tab == false,
-                expression: "tab == false"
+                value: _vm.tab == 1,
+                expression: "tab == 1"
               }
             ],
             staticClass: "c-form",
@@ -3886,8 +4314,8 @@ var render = function() {
               {
                 name: "show",
                 rawName: "v-show",
-                value: _vm.tab == false,
-                expression: "tab == false"
+                value: _vm.tab == 1,
+                expression: "tab == 1"
               }
             ],
             staticClass: "p-registerLink"
@@ -3909,8 +4337,8 @@ var render = function() {
               {
                 name: "show",
                 rawName: "v-show",
-                value: _vm.tab === true,
-                expression: "tab === true"
+                value: _vm.tab === 2,
+                expression: "tab === 2"
               }
             ],
             staticClass: "c-form",
@@ -4068,6 +4496,92 @@ var render = function() {
               attrs: { type: "submit", value: "ユーザー登録" }
             })
           ]
+        ),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.tab === 3,
+                expression: "tab === 3"
+              }
+            ],
+            staticClass: "c-form",
+            attrs: { method: "post" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.forgot($event)
+              }
+            }
+          },
+          [
+            _c("span", { staticClass: "c-form__heading" }, [
+              _vm._v("メールアドレス")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.forgotForm.email,
+                  expression: "forgotForm.email"
+                }
+              ],
+              staticClass: "c-form__input is-invalid",
+              attrs: {
+                type: "email",
+                name: "email",
+                value: "",
+                required: "",
+                autocomplete: "email",
+                autofocus: "",
+                placeholder: "例：hogehoge@gmail.com"
+              },
+              domProps: { value: _vm.forgotForm.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.forgotForm, "email", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.forgotErrors
+              ? _c(
+                  "span",
+                  { staticClass: "c-invalid", attrs: { role: "alert" } },
+                  [
+                    _vm.forgotErrors.email
+                      ? _c(
+                          "ul",
+                          _vm._l(_vm.forgotErrors.email, function(msg) {
+                            return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                          }),
+                          0
+                        )
+                      : _vm._e()
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("p", { staticClass: "c-form__comment" }, [
+              _vm._v(
+                "ご登録メールアドレスを送信してください。後ほど再設定のためのリンクを記載したメールを送らせていただきます。"
+              )
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "c-btn c-btnAuth",
+              attrs: { type: "submit", value: "送信" }
+            })
+          ]
         )
       ])
     ])
@@ -4100,6 +4614,163 @@ var staticRenderFns = [
       ]
     )
   },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "c-invalid", attrs: { role: "alert" } }, [
+      _c("strong", [_vm._v("※パスワードが違います")])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Reset.vue?vue&type=template&id=4af75674&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Reset.vue?vue&type=template&id=4af75674& ***!
+  \********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("main", { staticClass: "l-form" }, [
+    _c("div", { staticClass: "l-bg p-authForm" }, [
+      _c("div", { staticClass: "p-authForm__container" }, [
+        _c("p", { staticClass: "c-formTitle" }, [_vm._v("パスワードリセット")]),
+        _vm._v(" "),
+        _c(
+          "form",
+          {
+            staticClass: "c-form",
+            attrs: { method: "post" },
+            on: {
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.reset($event)
+              }
+            }
+          },
+          [
+            _c("span", { staticClass: "c-form__heading" }, [
+              _vm._v("新規パスワード")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.resetForm.password,
+                  expression: "resetForm.password"
+                }
+              ],
+              staticClass: "c-form__input is-invalid",
+              attrs: {
+                type: "password",
+                name: "password",
+                required: "",
+                autocomplete: "current-password",
+                placeholder: "※7文字以上半角英数字"
+              },
+              domProps: { value: _vm.resetForm.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.resetForm, "password", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm.resetErrors
+              ? _c(
+                  "span",
+                  { staticClass: "c-invalid", attrs: { role: "alert" } },
+                  [
+                    _vm.resetErrors.password
+                      ? _c(
+                          "ul",
+                          _vm._l(_vm.resetErrors.password, function(msg) {
+                            return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                          }),
+                          0
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm.resetErrors.token
+                      ? _c(
+                          "ul",
+                          _vm._l(_vm.resetErrors.token, function(msg) {
+                            return _c("li", { key: msg }, [_vm._v(_vm._s(msg))])
+                          }),
+                          0
+                        )
+                      : _vm._e()
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("span", { staticClass: "c-form__heading" }, [
+              _vm._v("パスワード再入力")
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.resetForm.password_confirmation,
+                  expression: "resetForm.password_confirmation"
+                }
+              ],
+              staticClass: "c-form__input is-invalid",
+              attrs: {
+                type: "password",
+                name: "password",
+                required: "",
+                autocomplete: "current-password",
+                placeholder: "※7文字以上半角英数字"
+              },
+              domProps: { value: _vm.resetForm.password_confirmation },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(
+                    _vm.resetForm,
+                    "password_confirmation",
+                    $event.target.value
+                  )
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "c-btnAuth c-btn",
+              attrs: { type: "submit", value: "パスワードリセット" }
+            })
+          ]
+        )
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -20841,6 +21512,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/Reset.vue":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Reset.vue ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Reset_vue_vue_type_template_id_4af75674___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reset.vue?vue&type=template&id=4af75674& */ "./resources/js/components/Reset.vue?vue&type=template&id=4af75674&");
+/* harmony import */ var _Reset_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Reset.vue?vue&type=script&lang=js& */ "./resources/js/components/Reset.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Reset_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Reset_vue_vue_type_template_id_4af75674___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Reset_vue_vue_type_template_id_4af75674___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Reset.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Reset.vue?vue&type=script&lang=js&":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/Reset.vue?vue&type=script&lang=js& ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Reset_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Reset.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Reset.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Reset_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Reset.vue?vue&type=template&id=4af75674&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/Reset.vue?vue&type=template&id=4af75674& ***!
+  \**************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Reset_vue_vue_type_template_id_4af75674___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Reset.vue?vue&type=template&id=4af75674& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Reset.vue?vue&type=template&id=4af75674&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Reset_vue_vue_type_template_id_4af75674___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Reset_vue_vue_type_template_id_4af75674___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/StepList.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/StepList.vue ***!
@@ -20961,10 +21701,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_StepList_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/StepList.vue */ "./resources/js/components/StepList.vue");
 /* harmony import */ var _components_Login_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Login.vue */ "./resources/js/components/Login.vue");
-/* harmony import */ var _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/errors/System.vue */ "./resources/js/pages/errors/System.vue");
-/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
+/* harmony import */ var _components_Reset_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Reset.vue */ "./resources/js/components/Reset.vue");
+/* harmony import */ var _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/errors/System.vue */ "./resources/js/pages/errors/System.vue");
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./store */ "./resources/js/store/index.js");
 
  // コンポーネントをインポートする
+
 
 
 
@@ -20983,15 +21725,25 @@ var routes = [{
   component: _components_Login_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
   beforeEnter: function beforeEnter(to, from, next) {
     // ログイン済みの場合は、ホーム画面へリダイレクト
-    if (_store__WEBPACK_IMPORTED_MODULE_5__["default"].getters['auth/check']) {
+    if (_store__WEBPACK_IMPORTED_MODULE_6__["default"].getters['auth/check']) {
       next('/');
     } else {
       next();
     }
   }
 }, {
+  path: "/reset",
+  component: _components_Reset_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+  beforeEnter: function beforeEnter(to, from, next) {
+    if (_store__WEBPACK_IMPORTED_MODULE_6__["default"].getters["auth/check"]) {
+      next("/");
+    } else {
+      next();
+    }
+  }
+}, {
   path: '/500',
-  component: _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  component: _pages_errors_System_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
 }]; // VueRouterインスタンスを作成する
 
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -21030,7 +21782,11 @@ var state = {
   // API呼び出し成功か失敗か入る
   loginErrorMessages: null,
   // エラーメッセージが入る
-  registerErrorMessages: null // エラーメッセージが入る
+  registerErrorMessages: null,
+  // エラーメッセージが入る
+  forgotErrorMessages: null,
+  // パスワード変更エラーメッセージの保持
+  resetErrorMessages: null // リセットパスワードエラーメッセージの保持
 
 };
 var getters = {
@@ -21051,6 +21807,14 @@ var mutations = {
   },
   setRegisterErrorMessages: function setRegisterErrorMessages(state, messages) {
     state.registerErrorMessages = messages; // stateのregisterErrorMessagesを更新
+  },
+  setForgotErrorMessages: function setForgotErrorMessages(state, messages) {
+    // パスワード変更エラーメッセージの更新
+    state.forgotErrorMessages = messages;
+  },
+  setResetErrorMessages: function setResetErrorMessages(state, messages) {
+    // リセットパスワードエラーメッセージの更新
+    state.resetErrorMessages = messages;
   }
 };
 var actions = {
@@ -21190,32 +21954,129 @@ var actions = {
       }, _callee3);
     }))();
   },
-  // ログインユーザーチェック
-  currentUser: function currentUser(context) {
+  // パスワード変更　
+  forgot: function forgot(context, data) {
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-      var response, user;
+      var response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
         while (1) {
           switch (_context4.prev = _context4.next) {
             case 0:
-              context.commit('setApiStatus', null);
-              console.log('ユーザーチェック');
+              context.commit("setApiStatus", null); // apiStatusのクリア
+
+              console.log(data);
               _context4.next = 4;
-              return axios.get('/api/user');
+              return axios.post("/api/forgot", data);
 
             case 4:
               response = _context4.sent;
+
+              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["CREATED"])) {
+                _context4.next = 8;
+                break;
+              }
+
+              // 通信成功の場合 201
+              context.commit("setApiStatus", true); // apiStatus を true に更新
+
+              return _context4.abrupt("return", false);
+
+            case 8:
+              context.commit("setApiStatus", false); // 422（バリデーションエラー）の場合,false に更新
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+                // 422（バリデーションエラー）の場合
+                context.commit("setForgotErrorMessages", response.data.errors); // registerErrorMessages にエラーメッセージを登録
+              } else {
+                // 通信失敗のステータスがその他の場合
+                context.commit("error/setCode", response.status, {
+                  root: true
+                });
+              }
+
+            case 10:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    }))();
+  },
+  // パスワードリセット
+  reset: function reset(context, data) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
+      var response;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              context.commit("setApiStatus", null); // apiStatusのクリア
+
+              _context5.next = 3;
+              return axios.post("/api/reset", data);
+
+            case 3:
+              response = _context5.sent;
+
+              if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                _context5.next = 8;
+                break;
+              }
+
+              // 通信成功の場合 200
+              context.commit("setApiStatus", true); // apiStatus を true に更新
+
+              context.commit("setUser", response.data); // user にデータを登録
+
+              return _context5.abrupt("return", false);
+
+            case 8:
+              context.commit("setApiStatus", false); // apiStatus を false に更新
+
+              if (response.status === _util__WEBPACK_IMPORTED_MODULE_1__["UNPROCESSABLE_ENTITY"]) {
+                // 422（バリデーションエラー）の場合
+                context.commit("setResetErrorMessages", response.data.errors); // バリデーションエラーメッセージセット
+              } else {
+                // 通信失敗のステータスがその他の場合
+                context.commit("error/setCode", response.status, {
+                  root: true
+                });
+              }
+
+            case 10:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5);
+    }))();
+  },
+  // ログインユーザーチェック
+  currentUser: function currentUser(context) {
+    return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6() {
+      var response, user;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              context.commit('setApiStatus', null);
+              console.log('ユーザーチェック');
+              _context6.next = 4;
+              return axios.get('/api/user');
+
+            case 4:
+              response = _context6.sent;
               user = response.data || null;
               console.log(user);
 
               if (!(response.status === _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
-                _context4.next = 11;
+                _context6.next = 11;
                 break;
               }
 
               context.commit('setApiStatus', true);
               context.commit('setUser', user);
-              return _context4.abrupt("return", false);
+              return _context6.abrupt("return", false);
 
             case 11:
               context.commit('setApiStatus', false);
@@ -21225,10 +22086,10 @@ var actions = {
 
             case 13:
             case "end":
-              return _context4.stop();
+              return _context6.stop();
           }
         }
-      }, _callee4);
+      }, _callee6);
     }))();
   }
 };

@@ -4,7 +4,9 @@ const state = {
   user: null,  // ユーザー情報が入る
   apiStatus: null,  // API呼び出し成功か失敗か入る
   loginErrorMessages: null, // エラーメッセージが入る
-  registerErrorMessages: null // エラーメッセージが入る
+  registerErrorMessages: null, // エラーメッセージが入る
+  forgotErrorMessages: null, // パスワード変更エラーメッセージの保持
+  resetErrorMessages: null // リセットパスワードエラーメッセージの保持
 }
 
 const getters = {
@@ -23,6 +25,12 @@ const mutations = {
   },
   setRegisterErrorMessages(state, messages) {
     state.registerErrorMessages = messages // stateのregisterErrorMessagesを更新
+  },
+  setForgotErrorMessages(state, messages) { // パスワード変更エラーメッセージの更新
+    state.forgotErrorMessages = messages;
+  },
+  setResetErrorMessages(state, messages) { // リセットパスワードエラーメッセージの更新
+    state.resetErrorMessages = messages;
   }
 }
 
@@ -79,6 +87,43 @@ const actions = {
     }
     context.commit('setApiStatus', false)
     context.commit('error/setCode', response.status, { root: true })
+  },
+  // パスワード変更　
+  async forgot(context, data) {
+    context.commit("setApiStatus", null); // apiStatusのクリア
+    console.log(data);
+    const response = await axios.post("/api/forgot", data);
+
+    if (response.status === CREATED) { // 通信成功の場合 201
+      context.commit("setApiStatus", true); // apiStatus を true に更新
+      return false;
+    }
+    context.commit("setApiStatus", false); // 422（バリデーションエラー）の場合,false に更新
+    if (response.status === UNPROCESSABLE_ENTITY) { // 422（バリデーションエラー）の場合
+      context.commit("setForgotErrorMessages", response.data.errors); // registerErrorMessages にエラーメッセージを登録
+    }
+    else { // 通信失敗のステータスがその他の場合
+      context.commit("error/setCode", response.status, { root: true });
+    }
+  },
+  // パスワードリセット
+  async reset(context, data) {
+    context.commit("setApiStatus", null); // apiStatusのクリア
+    const response = await axios.post("/api/reset", data);
+
+    if (response.status === OK) { // 通信成功の場合 200
+      context.commit("setApiStatus", true); // apiStatus を true に更新
+      context.commit("setUser", response.data); // user にデータを登録
+      return false;
+    }
+
+    context.commit("setApiStatus", false); // apiStatus を false に更新
+    if (response.status === UNPROCESSABLE_ENTITY) { // 422（バリデーションエラー）の場合
+      context.commit("setResetErrorMessages", response.data.errors); // バリデーションエラーメッセージセット
+    }
+    else { // 通信失敗のステータスがその他の場合
+      context.commit("error/setCode", response.status, { root: true });
+    }
   },
 
   // ログインユーザーチェック
