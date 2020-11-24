@@ -84,10 +84,37 @@
       box-sizing: border-box;
       border-radius: 8px;
       z-index: 1;
+      @include mq('tab') {
+        top: 0px;
+        width: 50%;
+        right: -50%;
+        padding-top: $space_8l;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: $font-size_l;
+        height: 100%;
+        position: fixed;
+        transition: all .5s;
+      }
+      @include mq('sp') {
+        top: 0px;
+        width: 100%;
+        right: -100%;
+        padding-top: $space_8l;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: $font-size_l;
+        height: 100%;
+        position: fixed;
+        transition: all .5s;
+      }
       &__list {
-
         .p-menuItem {
           margin-bottom: $space_m;
+          @include mq('tab') {
+            padding: $space_xl 0;
+            box-sizing: border-box;
+          }
           form {
             .p-logout {
               background-color: $color_light100;
@@ -99,6 +126,18 @@
         .p-menuItem:last-child {
           margin-bottom: 0;
         }
+      }
+    }
+    .active {
+      display: block;
+      @include mq('tab') {
+        transform: translatex(-100%);
+        -webkit-transform: translatex(-100%);
+        
+      }
+      @include mq('sp') {
+        transform: translatex(-100%);
+        -webkit-transform: translatex(-100%);
       }
     }
   }
@@ -146,7 +185,7 @@
         background-color: $color_dark075;
       }
     }
-    &.active &__border {
+    .active {
       &:nth-of-type(1){
           transform: translateY(12px) rotate(-45deg);
           background-color: $color_dark050;
@@ -160,4 +199,5 @@
       }
     }
   }
+
 }

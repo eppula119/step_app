@@ -21,6 +21,6 @@ Route::get('/user', 'StepController@isLogin')->name('user'); // ログインユ�
 Route::post('/register', 'Auth\RegisterController@register')->name('register'); //ユーザー登録
 Route::post('/login', 'Auth\LoginController@login')->name('login'); //ログイン
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout'); //ログアウト
-
 Route::post('/forgot', 'Auth\ForgotPasswordController@forgot')->name('forgot'); //パスワードリマインダー
 Route::post('/reset', 'Auth\ResetPasswordController@reset')->name('reset'); // パスワードリセット
+Route::post('/register_step', 'StepController@registerStep')->name('step.register');; // STEP登録

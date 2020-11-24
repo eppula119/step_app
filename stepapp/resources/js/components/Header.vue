@@ -14,8 +14,8 @@
       </div>
       <div class="p-header__menu">
         <button class="p-menuBtn" v-on:click="isActive = !isActive">メニュー</button>
-        <div class="p-headerMenu" v-show="isActive">
-          <ul class="p-headerMenu__list">
+        <div class="p-headerMenu" v-bind:class="{active: isActive}">
+          <ul class="p-headerMenu__list" v-show="isActive">
             <li class="p-menuItem">マイページ</li>
             <li class="p-menuItem">トップページ</li>
             <li class="p-menuItem">ユーザー登録</li>
@@ -30,10 +30,10 @@
           </ul>
         </div>
       </div>
-      <div class="p-headerMenuTrigger js-toggle-sp-menu">
-        <span class="p-headerMenuTrigger__border"></span>
-        <span class="p-headerMenuTrigger__border"></span>
-        <span class="p-headerMenuTrigger__border"></span>
+      <div class="p-headerMenuTrigger js-toggle-sp-menu" v-on:click="isActive = !isActive">
+        <span class="p-headerMenuTrigger__border" v-bind:class="{active: isActive}"></span>
+        <span class="p-headerMenuTrigger__border" v-bind:class="{active: isActive}"></span>
+        <span class="p-headerMenuTrigger__border" v-bind:class="{active: isActive}"></span>
       </div>
     </div>
   </header>
@@ -66,6 +66,12 @@ export default {
         console.log("ログアウトしたためログインページへ移動");
         this.$router.push("/login");
       }
+    }
+  },
+  watch: {
+    // ルート変更を監視
+    $route(to, from) {
+      this.isActive = false; // ルート変更時、メニューを閉じる
     }
   }
 };

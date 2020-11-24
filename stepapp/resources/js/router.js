@@ -5,6 +5,9 @@ import VueRouter from 'vue-router'
 import StepList from './components/StepList.vue'
 import Login from './components/Login.vue'
 import Reset from "./components/Reset.vue";
+import RegisterStep from "./components/RegisterStep.vue";
+// import Mypage from './components/Mypage.vue';
+import StepDetail from './components/StepDetail.vue';
 import SystemError from './pages/errors/System.vue'
 
 // ナビゲーションガードを使用するためstoreをインポート
@@ -40,6 +43,22 @@ const routes = [
         next();
       }
     }
+  },
+  {
+    path: "/register_step", // STEP登録画面へのパス
+    component: RegisterStep,
+    beforeEnter(to, from, next) {
+      if (store.getters["auth/check"]) {
+        next();
+      } else {
+        next('/login'); // ログイン済みで無い場合は、ログイン画面へリダイレクト
+      }
+    }
+  },
+  {
+    path: '/steps/:id',
+    component: StepDetail,
+    props: true
   },
   {
     path: '/500',

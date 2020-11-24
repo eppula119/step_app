@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <Message />
     <RouterView />
     <Footer />
   </div>
@@ -10,12 +11,13 @@
 import { INTERNAL_SERVER_ERROR } from "./util";
 import Footer from "./components/Footer.vue";
 import Header from "./components/Header.vue";
+import Message from "./components/Message.vue";
 
 export default {
   components: {
     Footer,
-    Header
-    // Message,
+    Header,
+    Message
     // Modal
   },
   computed: {
