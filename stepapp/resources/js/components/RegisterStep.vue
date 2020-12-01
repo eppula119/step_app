@@ -154,11 +154,19 @@ export default {
         timeout: 5000
       });
 
+      // stepのidをstoreへ登録
+      console.log("response.dataの中身確認");
+      console.log(response.data);
+      console.log("step_idの中身確認");
+      console.log(response.data.step_id);
+      // this.$store.dispatch("step/setStepId", response.data.step_id);
+
       this.reset();
       this.$emit("input", false);
       console.log(response.data);
-      console.log(response.data.id);
-      this.$router.push(`/steps/${response.data.id}`);
+      this.$router.push(
+        `/register_child/step=${response.data.step_id}/child=1`
+      );
     }
   }
 };

@@ -3,8 +3,9 @@ import Vuex from 'vuex'
 
 import auth from './auth'
 import error from './error'
+import step from './step'
 // import idea from './idea'
-// import paging from './paging'
+import paging from './paging'
 import message from './message'
 // import modal from './modal'
 
@@ -14,8 +15,9 @@ const store = new Vuex.Store({
   modules: {
     auth,
     error,
+    step,
     // idea,
-    // paging,
+    paging,
     message
     // modal
   }

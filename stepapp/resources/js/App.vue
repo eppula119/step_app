@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-on:click="categoryClose()">
     <Header />
     <Message />
     <RouterView />
@@ -23,6 +23,12 @@ export default {
   computed: {
     errorCode() {
       return this.$store.state.error.code; // エラーstateを参照
+    }
+  },
+  methods: {
+    categoryClose() {
+      console.log("カテゴリークローズ");
+      this.$store.dispatch("step/setCategoryMenu", false);
     }
   },
   watch: {

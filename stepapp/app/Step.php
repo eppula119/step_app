@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Step extends Model
 {
     //データを取得時、Carbonクラスのデータに置き換え
-    protected $dates = ['created_at'];
+    // protected $dates = ['created_at'];
 
     // jsonに含めるアクセサ
     protected $appends = [
@@ -32,26 +32,26 @@ class Step extends Model
     }
 
     //usersテーブルと紐付ける   (多対多)
-    public function users()
-    {
-        return $this->belongsToMany('App\User')->withTimestamps();
-    }
+    // public function users()
+    // {
+    //     return $this->belongsToMany('App\User')->withTimestamps();
+    // }
 
     // stepに結びつくuserを複数取得
-       public function favorites()
-       {
-           return $this->belongsToMany('Favorite');
-       }
+    //    public function favorites()
+    //    {
+    //        return $this->belongsToMany('Favorite');
+    //    }
     // public function favorites()
     // {
     //     return $this->belongsToMany('App\User', 'favorites')->withTimestamps();
     // }
 
     // stepに結びつくuserを複数取得
-    public function step_users()
-    {
-        return $this->belongsToMany('App\User', 'step_user')->withTimestamps();
-    }
+    // public function step_users()
+    // {
+    //     return $this->belongsToMany('App\User', 'step_user')->withTimestamps();
+    // }
 
     // 
     public function getFavoritedByUserAttribute()
@@ -60,7 +60,7 @@ class Step extends Model
             return false;
         }
 
-        return $this->favorites->contains(Auth::user());
+    //     return $this->favorites->contains(Auth::user());
     }
 
 

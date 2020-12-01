@@ -1,5 +1,5 @@
 <template>
-  <header class="l-header">
+  <header class="l-header" v-bind:class="{'p-headerList':stepList}">
     <div class="p-header">
       <div class="p-header__logo">
         <RouterLink class="p-topLink" to="/">
@@ -36,21 +36,27 @@
         <span class="p-headerMenuTrigger__border" v-bind:class="{active: isActive}"></span>
       </div>
     </div>
+
+    <StepSort />
   </header>
 </template>
 
 <script>
+import StepSort from "../components/StepSort.vue";
 import { mapState, mapGetters } from "vuex";
 export default {
+  components: {
+    StepSort
+  },
   data() {
     return {
-      tab: 1,
       isActive: false
     };
   },
   computed: {
     ...mapState({
-      apiStatus: state => state.auth.apiStatus
+      apiStatus: state => state.auth.apiStatus,
+      stepList: state => state.paging.stepList
     }),
     ...mapGetters({
       isLogin: "auth/check" //ログインしているかチェック
