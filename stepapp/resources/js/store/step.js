@@ -2,10 +2,13 @@
 
 const state = {
   steps: [],
+  childSteps: [],
+  favSteps: [],
+  challengeSteps: [],
   filterQuery: {
     category: "",
-    price: "",
-    created_at: ""
+    favorite: "",
+    searchTitle: "",
   }, // 検索パラメータ
   searchFlg: false,
   categoryMenu: false,
@@ -19,7 +22,7 @@ const getters = {
     let data = state.steps;
     let query = state.filterQuery;
 
-    if (!query.category && !query.price && !query.created_at) {
+    if (!query.category && !query.favorite && !query.searchTitle) {
       console.log("アイディアすべて返す")
       return data;
     }
@@ -32,41 +35,35 @@ const getters = {
       });
 
     }
-    if (query.created_at || query.price) {
-      console.log(query.created_at)
-      if (query.price === "high") {
-        console.log("高い順絞り込み")
+    if (query.favorite) {  // お気に入り順検索
+      console.log(query.favorite)
+      if (query.favorite === "high") { // 多い順に並び替え
+        console.log("多い順絞り込み")
         data.sort(function (a, b) {
-          if (a.price < b.price) return 1;
-          if (a.price > b.price) return -1;
+          if (a.favorites_count < b.favorites_count) return 1;
+          if (a.favorites_count > b.favorites_count) return -1;
           return 0;
         });
       }
-      if (query.price === "low") {
-        console.log("低い順絞り込み")
+      if (query.favorite === "low") { 　// 少ない順に並び替え
+        console.log("少ない順絞り込み")
         data.sort(function (a, b) {
-          if (a.price < b.price) return -1;
-          if (a.price > b.price) return 1;
+          if (a.favorites_count < b.favorites_count) return -1;
+          if (a.favorites_count > b.favorites_count) return 1;
           return 0;
         });
       }
-      if (query.created_at === "new") {  // ここから書くところから
-        console.log("新しい順絞り込み")
-        data.sort(function (a, b) {
-          if (a.created_at < b.created_at) return 1;
-          if (a.created_at > b.created_at) return -1;
-          return 0;
-        });
-      }
-      if (query.created_at === "old") {  // ここから書くところから
-        console.log("古い順絞り込み")
-        data.sort(function (a, b) {
-          if (a.created_at < b.created_at) return -1;
-          if (a.created_at > b.created_at) return 1;
-          return 0;
-        });
-      }
+
       return data;
+    }
+    if (query.searchTitle) {
+      // カテゴリー検索
+      data = data.filter(function (step) {
+        console.log("タイトル検索絞り込み済みSTEP")
+        // 絞り込み中のタイトルの一部と合致したSTEPのみ配列に入れ直す。
+        return step.title.indexOf(query.searchTitle) !== -1;
+      });
+
     }
 
 
@@ -87,9 +84,19 @@ const mutations = {
     state.steps = steps;
     console.log(state.steps);
   },
+  setChildSteps(state, childs) {
+    state.childSteps = childs;
+    console.log(state.childSteps);
+  },
   setCategoryMenu(state, boolean) {
     state.categoryMenu = boolean;
-  }
+  },
+  setFavSteps(state, steps) {
+    state.favSteps = steps;
+  },
+  setChallengeSteps(state, steps) {
+    state.challengeSteps = steps;
+  },
 
 }
 
@@ -107,10 +114,22 @@ const actions = {
   async setSteps(context, steps) {
     context.commit('setSteps', steps)
   },
+  // stateのchildSteps情報を更新
+  async setChildSteps(context, childs) {
+    context.commit('setChildSteps', childs)
+  },
   // stateのcategoryMenu情報を更新
   async setCategoryMenu(context, boolean) {
     context.commit('setCategoryMenu', boolean)
-  }
+  },
+  // stateのstep情報を更新
+  async setFavSteps(context, steps) {
+    context.commit('setFavSteps', steps)
+  },
+  // stateのstep情報を更新
+  async setChallengeSteps(context, steps) {
+    context.commit('setChallengeSteps', steps)
+  },
 
 }
 

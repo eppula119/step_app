@@ -317,6 +317,23 @@ h3 {
   }
 }
 
+.l-myPage {
+  background-color: #91ced9;
+  height: calc( 1500px + 1000px );
+}
+
+@media screen and (max-width: 1179px) {
+  .l-myPage {
+    height: calc( 1500px + 1000px );
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .l-myPage {
+    height: calc( 3000px + 700px );
+  }
+}
+
 .l-hero {
   width: 100%;
   height: 400px;
@@ -625,10 +642,6 @@ h3 {
   transition: all 0.7s;
   -webkit-transition: all 0.7s;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   transform: all 0.7s;
 }
 
@@ -638,6 +651,12 @@ h3 {
 
 .c-step .c-itemCover__link {
   color: white;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .c-step .c-itemCover__link .p-coverIcon {
@@ -703,6 +722,46 @@ h3 {
 
 .c-step__wrap .c-indexContainer .c-favContainer__total {
   font-size: 1.6rem;
+}
+
+.c-overlay {
+  z-index: 4;
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-overlay__content {
+  z-index: 5;
+  width: 50%;
+  height: 55%;
+  background-color: white;
+  opacity: 0.8;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  .c-overlay__content {
+    width: 60%;
+    height: 70%;
+  }
+}
+
+.c-overlay__review {
+  z-index: 5;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  opacity: 0.8;
+  position: relative;
+  padding: 15px;
 }
 
 .p-authForm {
@@ -1321,23 +1380,27 @@ h3 {
 }
 
 .p-btnContainer__delete,
-.p-btnContainer__update {
+.p-btnContainer__back,
+.p-btnContainer__next {
+  background-color: #8B98A2;
+  color: white;
+  display: inline-block;
   width: 40%;
   border-radius: 6px;
 }
 
 @media screen and (max-width: 767px) {
   .p-btnContainer__delete,
-  .p-btnContainer__update {
+  .p-btnContainer__back,
+  .p-btnContainer__next {
     margin-top: 15px;
     padding: 0;
     height: 40px;
   }
 }
 
-.p-btnContainer__delete {
-  background-color: #8B98A2;
-  color: white;
+.p-linkMypage {
+  border-radius: 6px;
 }
 
 .p-stepForm__title {
@@ -1530,7 +1593,10 @@ h3 {
 }
 
 .p-registerProfile .p-fileContainer__airDrop .p-outputImg__img {
+  display: block;
+  width: 100%;
   height: 100%;
+  border-radius: 100px;
 }
 
 @media screen and (max-width: 767px) {
@@ -1814,14 +1880,16 @@ h3 {
 }
 
 .p-mypage .p-myStepWrap,
-.p-mypage .p-challengeStepWrap {
+.p-mypage .p-challengeStepWrap,
+.p-mypage .p-favStepWrap {
   position: relative;
   background: white;
   border-radius: 6px;
 }
 
 .p-mypage .p-myStepWrap__arrowLeft,
-.p-mypage .p-challengeStepWrap__arrowLeft {
+.p-mypage .p-challengeStepWrap__arrowLeft,
+.p-mypage .p-favStepWrap__arrowLeft {
   position: absolute;
   top: 50%;
   left: 15px;
@@ -1830,13 +1898,15 @@ h3 {
 
 @media screen and (max-width: 1179px) {
   .p-mypage .p-myStepWrap__arrowLeft,
-  .p-mypage .p-challengeStepWrap__arrowLeft {
+  .p-mypage .p-challengeStepWrap__arrowLeft,
+  .p-mypage .p-favStepWrap__arrowLeft {
     display: none;
   }
 }
 
 .p-mypage .p-myStepWrap__arrowRight,
-.p-mypage .p-challengeStepWrap__arrowRight {
+.p-mypage .p-challengeStepWrap__arrowRight,
+.p-mypage .p-favStepWrap__arrowRight {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -1845,13 +1915,15 @@ h3 {
 
 @media screen and (max-width: 1179px) {
   .p-mypage .p-myStepWrap__arrowRight,
-  .p-mypage .p-challengeStepWrap__arrowRight {
+  .p-mypage .p-challengeStepWrap__arrowRight,
+  .p-mypage .p-favStepWrap__arrowRight {
     display: none;
   }
 }
 
 .p-mypage .p-myStepWrap__title,
-.p-mypage .p-challengeStepWrap__title {
+.p-mypage .p-challengeStepWrap__title,
+.p-mypage .p-favStepWrap__title {
   width: 90%;
   margin: 0 auto;
   border-bottom: solid 1px #C9D0D6;
@@ -1861,42 +1933,47 @@ h3 {
 }
 
 .p-mypage .p-myStepWrap .p-stepContainer,
-.p-mypage .p-challengeStepWrap .p-stepContainer {
+.p-mypage .p-challengeStepWrap .p-stepContainer,
+.p-mypage .p-favStepWrap .p-stepContainer {
   width: 90%;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-@media screen and (max-width: 1179px) {
-  .p-mypage .p-myStepWrap .p-stepContainer,
-  .p-mypage .p-challengeStepWrap .p-stepContainer {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+.p-mypage .p-myStepWrap .p-stepContainer__step,
+.p-mypage .p-challengeStepWrap .p-stepContainer__step,
+.p-mypage .p-favStepWrap .p-stepContainer__step {
+  display: inline-block;
+  width: 40%;
+  white-space: normal;
+  margin-right: 20px;
 }
 
 @media screen and (max-width: 1179px) {
   .p-mypage .p-myStepWrap .p-stepContainer__step,
-  .p-mypage .p-challengeStepWrap .p-stepContainer__step {
-    display: inline-block;
+  .p-mypage .p-challengeStepWrap .p-stepContainer__step,
+  .p-mypage .p-favStepWrap .p-stepContainer__step {
     width: 45%;
-    white-space: normal;
     margin-right: 15px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .p-mypage .p-myStepWrap .p-stepContainer__step,
-  .p-mypage .p-challengeStepWrap .p-stepContainer__step {
+  .p-mypage .p-challengeStepWrap .p-stepContainer__step,
+  .p-mypage .p-favStepWrap .p-stepContainer__step {
     width: 90%;
     margin-right: 10px;
   }
 }
 
-.p-mypage .p-challengeStepWrap {
+.p-mypage .p-challengeStepWrap,
+.p-mypage .p-favStepWrap {
   margin-top: 150px;
 }
 
@@ -2006,7 +2083,7 @@ h3 {
 }
 
 .p-indexContainer__fav {
-  color: #339999;
+  color: white;
   font-size: 2.8rem;
   position: absolute;
   right: 0;
@@ -2016,6 +2093,10 @@ h3 {
   .p-indexContainer__fav {
     top: -3px;
   }
+}
+
+.p-indexContainer--favorited {
+  color: #339999;
 }
 
 .p-detailTitle {

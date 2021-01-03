@@ -37,7 +37,7 @@
     }
   }
   &__fav {
-    color: $color_fav;
+    color: $color_light100;
     font-size: $font-size_3l;
     position: absolute;
     right: 0;
@@ -47,6 +47,9 @@
     .p-fav {
 
     }
+  }
+  &--favorited {
+    color: $color_fav;
   }
 }
 .p-detailTitle {

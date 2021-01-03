@@ -13,7 +13,7 @@
     margin-top: $space_xl;
     margin-bottom: $space_6l;
   }
-  .p-myStepWrap, .p-challengeStepWrap {
+  .p-myStepWrap, .p-challengeStepWrap, .p-favStepWrap {
     position: relative;
     background: $color_light100;
     border-radius: 6px;
@@ -50,16 +50,18 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      @include mq('tab') {
+      // @include mq('tab') {
         display: block;
         overflow-x: auto;
         white-space: nowrap;
-      }
+      // }
       &__step {
+        display: inline-block;
+        width: 40%;
+        white-space: normal;
+        margin-right: $space_xl;
         @include mq('tab') {
-          display: inline-block;
           width: 45%;
-          white-space: normal;
           margin-right: $space_l;
         }
         @include mq() {
@@ -69,7 +71,7 @@
       }
     }
   }
-  .p-challengeStepWrap {
+  .p-challengeStepWrap, .p-favStepWrap {
     margin-top: $space_15l;
   }
 }

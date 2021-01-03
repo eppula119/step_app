@@ -2,7 +2,8 @@
 
 const state = {
   paginationNumber: 1,  // 現在のページ
-  stepList: true
+  stepList: true,
+  top: false
 }
 
 const mutations = {
@@ -11,6 +12,9 @@ const mutations = {
   },
   changeStepList(state, boolean) {
     state.stepList = boolean;  // stateのstep一覧ページか更新
+  },
+  changeTop(state, boolean) {
+    state.top = boolean;  // stateのTOPページか更新
   }
 }
 
@@ -20,6 +24,9 @@ const actions = {
   },
   async changeStepList(context, boolean) {      // step一覧ページか更新
     context.commit('changeStepList', boolean)
+  },
+  async changeTop(context, boolean) {      // TOPページか更新
+    context.commit('changeTop', boolean)
   }
 }
 

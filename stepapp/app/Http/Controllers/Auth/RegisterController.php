@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use App\Rules\AlphaNumHalf;
 use Illuminate\Support\Facades\Log; //ログを取る
 
 class RegisterController extends Controller
@@ -51,9 +52,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            // 'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            
+            'email' => ['required', 'email', 'unique:users'],
+            'password' => ['required', new AlphaNumHalf, 'min:8', 'max:32','confirmed'],
         ]);
         Log::debug('バリデーション完了');
     }

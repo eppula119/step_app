@@ -4,7 +4,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &__delete, &__update {
+  &__delete, &__back, &__next {
+    background-color: $color_dark075;
+    color: $color_light100;
+     display: inline-block;
     width: 40%;
     border-radius: 6px;
     @include mq() {
@@ -13,8 +16,7 @@
       height: 40px;
     }
   }
-  &__delete {
-    background-color: $color_dark075;
-    color: $color_light100;
-  }
+}
+.p-linkMypage {
+  border-radius: 6px;
 }

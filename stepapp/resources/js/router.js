@@ -2,14 +2,17 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 // コンポーネントをインポートする
+import Top from './components/Top.vue'
 import StepList from './components/StepList.vue'
 import Login from './components/Login.vue'
 import Reset from "./components/Reset.vue";
 import RegisterStep from "./components/RegisterStep.vue";
 import RegisterChild from "./components/RegisterChild.vue";
-// import Mypage from './components/Mypage.vue';
+import Mypage from './components/Mypage.vue';
 import StepDetail from './components/StepDetail.vue';
-import SystemError from './pages/errors/System.vue'
+import ChildStep from './components/ChildStep.vue';
+import Profile from './components/Profile.vue';
+import SystemError from './pages/errors/System.vue';
 
 // ナビゲーションガードを使用するためstoreをインポート
 import store from './store'
@@ -20,15 +23,15 @@ Vue.use(VueRouter)
 // パスとコンポーネントのマッピング
 const routes = [
   {
-    path: '/',
-    component: StepList // Step一覧画面表示
+    path: '/top',
+    component: Top // TOP画面表示
   },
   {
     path: '/login',
     component: Login,
     beforeEnter(to, from, next) {  // ログイン済みの場合は、ホーム画面へリダイレクト
       if (store.getters['auth/check']) {
-        next('/')
+        next('/step_list')
       } else {
         next()
       }
@@ -39,7 +42,7 @@ const routes = [
     component: Reset,
     beforeEnter(to, from, next) {
       if (store.getters["auth/check"]) {
-        next("/");
+        next("/step_list");
       } else {
         next();
       }
@@ -47,11 +50,12 @@ const routes = [
   },
   {
     path: "/step_list", // STEP登録画面へのパス
-    component: StepList,
-    // props: route => {
-    //   const page = route.query.page  // クエリパラメータ「page」を取得
-    //   return { page: /^[1-9][0-9]*$/.test(page) ? page * 1 : 1 }  // 整数と解釈されない値は「1」
-    // }
+    component: StepList
+  },
+  {
+    path: '/step_list/:id', // STEP詳細画面へのパス
+    component: StepDetail,
+    props: true
   },
   {
     path: "/register_step", // STEP登録画面へのパス
@@ -65,7 +69,7 @@ const routes = [
     }
   },
   {
-    path: '/register_child/step=:step_id/child=:child_id', // STEP登録画面へのパス
+    path: '/register_child/step=:step_id/child', // 子STEP登録画面へのパス
     component: RegisterChild,
     beforeEnter(to, from, next) {
       if (store.getters["auth/check"]) {
@@ -76,9 +80,40 @@ const routes = [
     }
   },
   {
-    path: '/steps/:id',
+    path: "/update_step", // STEP編集画面へのパス
+    component: RegisterStep,
+    beforeEnter(to, from, next) {
+      if (store.getters["auth/check"]) {
+        next();
+      } else {
+        next('/login'); // ログイン済みで無い場合は、ログイン画面へリダイレクト
+      }
+    }
+  },
+  {
+    path: '/step_list/:id', // STEP詳細画面へのパス
     component: StepDetail,
     props: true
+  },
+  {
+    path: '/step_list/step=:step_id/child', // 子STEP詳細画面へのパス
+    component: ChildStep,
+    props: true
+  },
+  {
+    path: '/mypage',
+    component: Mypage,
+  },
+  {
+    path: "/profile", // STEP編集画面へのパス
+    component: Profile,
+    beforeEnter(to, from, next) {
+      if (store.getters["auth/check"]) {
+        next();
+      } else {
+        next('/login'); // ログイン済みで無い場合は、ログイン画面へリダイレクト
+      }
+    }
   },
   {
     path: '/500',

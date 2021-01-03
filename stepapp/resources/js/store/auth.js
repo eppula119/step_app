@@ -44,11 +44,13 @@ const actions = {
     if (response.status === CREATED) {
       // context.commit('setApiStatus', true)
       console.log('レスポンス成功！')
+      context.commit('setApiStatus', true)
       context.commit('setUser', response.data)
       return false
     }
     context.commit('setApiStatus', false)
     if (response.status === UNPROCESSABLE_ENTITY) {
+      console.log("うまく行かなかったため、エラーデータの中身")
       context.commit('setRegisterErrorMessages', response.data.errors)
       console.log(response.data);
     } else {
@@ -68,6 +70,7 @@ const actions = {
     }
     context.commit('setApiStatus', false) // 通信失敗だったらfalse
     if (response.status === UNPROCESSABLE_ENTITY) {
+      console.log("ログインうまく行かなかったため、エラーデータの中身")
       context.commit('setLoginErrorMessages', response.data.errors) // バリデーションに引っかかった場合、エラーメッセージをセット
     } else {
       context.commit('error/setCode', response.status, { root: true })

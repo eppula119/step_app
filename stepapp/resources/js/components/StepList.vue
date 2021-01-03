@@ -23,26 +23,29 @@ import Pagination from "../components/Pagination.vue";
 export default {
   components: {
     Step,
-    Pagination
+    Pagination,
   },
   props: {
     page: {
       type: Number,
       required: false,
-      default: 1
-    }
+      default: 1,
+    },
   },
   data() {
     return {
       currentPage: 0,
       lastPage: 0,
-      length: 3
+      length: 3,
+      favorites_count: 12,
+      favorites_by_user: true,
     };
   },
   methods: {
     // 全てのアイディアを取得
     async fetchSteps() {
       const response = await axios.get("/api/step_list");
+      console.log("画面表示後、response.dataの中身");
       console.log(response.data);
       //　レスポンスエラーの場合エラーstateにstatusをセット
       if (response.status !== OK) {
@@ -51,16 +54,16 @@ export default {
       }
       // 通信成功時、stepストアにアイディア全てセット
       this.$store.dispatch("step/setSteps", response.data);
-    }
+    },
   },
   computed: {
     // stepストアのstepsを参照
     ...mapState({
-      steps: state => state.step.steps
+      steps: (state) => state.step.steps,
     }),
     // stepストアのfilteredSteps(絞り込み後のstep)を参照
     ...mapGetters({
-      filteredSteps: "step/filteredSteps"
+      filteredSteps: "step/filteredSteps",
     }),
     // 表示したいデータの最初の値
     listStart() {
@@ -82,7 +85,7 @@ export default {
       console.log("listの中身");
       console.log(list);
       return list;
-    }
+    },
   },
   watch: {
     $route: {
@@ -92,8 +95,8 @@ export default {
         await this.fetchSteps(); // api通信開始メソッド実行
         console.log(to);
       },
-      immediate: true // 起動時にも実行
-    }
-  }
+      immediate: true, // 起動時にも実行
+    },
+  },
 };
 </script>

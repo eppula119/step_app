@@ -19,4 +19,14 @@
     height: calc( #{ $height_11l } + #{ $height_4l } );
   }
 }
+.l-myPage {
+  background-color: $color_main;
+  height: calc( #{$height_9l} + #{$height_7l} );
+  @include mq('tab') {
+    height: calc( #{$height_9l} + #{$height_7l} );
+  }
+  @include mq() {
+    height: calc( #{ $height_11l } + #{ $height_4l } );
+  }
+}
 
