@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Storage;
 use Illuminate\Support\Facades\Auth; //認証に関わる物を使う
 use App\Rules\AlphaNumHalf;
 use App\Rules\MegaBytes;
@@ -435,12 +436,16 @@ class StepController extends Controller
 
         if(!empty($request['image'])){ // 画像が編集されている場合、新しく登録
             Log::debug('画像が編集されているため新しいファイル名作成！');
-            $file_name = "";
-            // ファイルの名前をタイムスタンプに付与し、ファイル名を作成。
-            $file_name = time() . '.' . $request['image']->getClientOriginalName();
-            $request['image']->storeAs('public', $file_name);
-            // プロジェクト内にファイルを保存
-            $user['image'] = '/storage/' . $file_name;
+            // $file_name = "";
+            // // ファイルの名前をタイムスタンプに付与し、ファイル名を作成。
+            // $file_name = time() . '.' . $request['image']->getClientOriginalName();
+            // $request['image']->storeAs('public', $file_name);
+            // // プロジェクト内にファイルを保存
+            // $user['image'] = '/storage/' . $file_name;
+
+            $image = $request['image'];
+            $path = Storage::disk('s3')->put('/', $image, 'public');
+            $user['image'] = Storage::disk('s3')->url($path);
         }
         
         $user->profile = $request->profile;
