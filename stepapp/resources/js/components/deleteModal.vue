@@ -65,7 +65,7 @@ export default {
       this.reset();
 
       if (response.status !== OK && response.status !== CREATED) {
-        console.log("OKじゃ無いエラー");
+        console.log("OKじゃじゃ無いエラー");
         console.log(response);
         console.log("response.dataのなかみ");
         console.log(response.data);

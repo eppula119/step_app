@@ -37,7 +37,7 @@ export default {
     errorCode: {
       handler(val) {
         if (val === INTERNAL_SERVER_ERROR) {
-          this.$router.push("/500");
+          console.log("インターナルサーバーエラー");
         }
       },
       immediate: true,

@@ -1962,7 +1962,7 @@ __webpack_require__.r(__webpack_exports__);
     errorCode: {
       handler: function handler(val) {
         if (val === _util__WEBPACK_IMPORTED_MODULE_0__["INTERNAL_SERVER_ERROR"]) {
-          this.$router.push("/500");
+          console.log("インターナルサーバーエラー");
         }
       },
       immediate: true
@@ -3545,7 +3545,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   break;
                 }
 
-                console.log("OKじゃ無いエラー");
+                console.log("OKじゃじゃ無いエラー");
                 console.log(response);
                 console.log("response.dataのなかみ");
                 console.log(response.data);
@@ -3934,7 +3934,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   break;
                 }
 
-                console.log("OKじゃ無いエラー");
+                console.log("OKじゃじゃ無いエラー");
 
                 _this3.$store.commit("error/setCode", response.status);
 
@@ -4306,7 +4306,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   break;
                 }
 
-                console.log("OKじゃ無いエラー");
+                console.log("OKじゃじゃ無いエラー");
                 console.log(response);
                 console.log("response.dataのなかみ");
                 console.log(response.data);
@@ -5576,7 +5576,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   break;
                 }
 
-                console.log("OKじゃ無いエラー");
+                console.log("OKじゃじゃ無いエラー");
                 console.log(response);
                 console.log("response.dataのなかみ");
                 console.log(response.data);

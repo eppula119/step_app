@@ -225,7 +225,7 @@ export default {
       }
       this.reset();
       if (response.status !== OK && response.status !== CREATED) {
-        console.log("OKじゃ無いエラー");
+        console.log("OKじゃじゃ無いエラー");
         this.$store.commit("error/setCode", response.status);
         this.errors = response.data.errors;
         console.log("response.dataのなかみ");

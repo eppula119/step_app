@@ -248,12 +248,9 @@ class StepController extends Controller
         $file_name = "";
 
         if(!empty($request['image'])) {
-        // ファイルの名前をタイムスタンプに付与し、ファイル名を作成。
-        $file_name = time() . '.' . $request['image']->getClientOriginalName();
-        $request['image']->storeAs('public', $file_name);
-        // プロジェクト内にファイルを保存
-        $step['image'] = '/storage/' . $file_name;
-        Log::debug('画像登録ok');
+       		$image = $request['image'];
+					$path = Storage::disk('s3')->put('/', $image, 'public');
+					$step['image'] = Storage::disk('s3')->url($path);
         }
 
         $step->title = $request->title;
@@ -291,11 +288,9 @@ class StepController extends Controller
         $file_name = "";
 
         if(!empty($request['image'])) {
-        // ファイルの名前をタイムスタンプに付与し、ファイル名を作成。
-        $file_name = time() . '.' . $request['image']->getClientOriginalName();
-        $request['image']->storeAs('public', $file_name);
-        // プロジェクト内にファイルを保存
-        $step['image'] = '/storage/' . $file_name;
+        	$image = $request['image'];
+					$path = Storage::disk('s3')->put('/', $image, 'public');
+					$step['image'] = Storage::disk('s3')->url($path);
         }
 
         $step->title = $request->title;
@@ -380,12 +375,9 @@ class StepController extends Controller
         $user_id = Auth::id();
 
         if(!empty($request['image'])){ // 画像が編集されている場合、新しく登録
-        $file_name = "";
-        // ファイルの名前をタイムスタンプに付与し、ファイル名を作成。
-        $file_name = time() . '.' . $request['image']->getClientOriginalName();
-        $request['image']->storeAs('public', $file_name);
-        // プロジェクト内にファイルを保存
-        $step['image'] = '/storage/' . $file_name;
+					$image = $request['image'];
+					$path = Storage::disk('s3')->put('/', $image, 'public');
+					$step['image'] = Storage::disk('s3')->url($path);
 
         }
         
@@ -436,12 +428,7 @@ class StepController extends Controller
 
         if(!empty($request['image'])){ // 画像が編集されている場合、新しく登録
             Log::debug('画像が編集されているため新しいファイル名作成！');
-            // $file_name = "";
-            // // ファイルの名前をタイムスタンプに付与し、ファイル名を作成。
-            // $file_name = time() . '.' . $request['image']->getClientOriginalName();
-            // $request['image']->storeAs('public', $file_name);
-            // // プロジェクト内にファイルを保存
-            // $user['image'] = '/storage/' . $file_name;
+            
 
             $image = $request['image'];
             $path = Storage::disk('s3')->put('/', $image, 'public');
